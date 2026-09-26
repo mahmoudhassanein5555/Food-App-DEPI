@@ -44,4 +44,5 @@ class AppColors {
   static const Color mastercardOrange = Color(0xFFF79E1B);
   static const Color visaBlue = Color(0xFF1769AA);
   static const Color successArtworkBackground = Color(0xFF9AAEBE);
+  static const Color orderImagePlaceholder = Color(0xFF9AAEBE);
 }

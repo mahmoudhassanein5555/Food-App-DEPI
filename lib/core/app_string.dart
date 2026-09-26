@@ -34,4 +34,30 @@ class AppString {
   static const String paymentSuccessTemplate =
       'You successfully paid {amount},\nenjoy our service!';
   static const String currencySymbol = '\$';
+
+  static const String ordersTitle = 'My Orders';
+  static const String ongoingOrders = 'Ongoing';
+  static const String orderHistory = 'History';
+  static const String foodCategory = 'Food';
+  static const String drinkCategory = 'Drink';
+  static const String orderCompleted = 'Completed';
+  static const String orderCanceled = 'Canceled';
+  static const String trackOrderAction = 'Track Order';
+  static const String cancelOrderAction = 'Cancel';
+  static const String rateOrderAction = 'Rate';
+  static const String reorderAction = 'Re-Order';
+  static const String orderItemCountTemplate = '{count} Items';
+  static const String orderNumberTemplate = '#{number}';
+  static const String orderActionFeedbackTemplate =
+      '{action} selected for order {number}';
+  static const String orderDateJan29 = '29 JAN, 12:30';
+  static const String orderDateJan30 = '30 JAN, 12:30';
+  static const String pizzaHut = 'Pizza Hut';
+  static const String mcDonalds = 'McDonald';
+  static const String starbucks = 'Starbucks';
+  static const String pizzaHutOrderNumber = '16243';
+  static const String mcDonaldsOrderNumber = '24232';
+  static const String starbucksOrderNumber = '240112';
+  static const String ordersMenuHelp = 'Help';
+  static const String ordersMenuSettings = 'Settings';
 }
