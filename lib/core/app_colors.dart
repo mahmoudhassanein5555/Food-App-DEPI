@@ -31,4 +31,17 @@ class AppColors {
   static const Color successGreen = Color(0xFF67C6A7);
   static const Color errorRed = Color(0xFFE76B5C);
   static const Color black = Color(0xFF111111);
+
+  static const Color transparent = Color(0x00000000);
+  static const Color cartImagePlaceholder = Color(0xFF292A3C);
+  static const Color cartQuantityButton = Color(0xFF343547);
+  static const Color cartHeaderButton = Color(0xFF2A2B3E);
+  static const Color deliveryAddressBackground = Color(0xFFF0F5FA);
+  static const Color paymentCardRed = Color(0xFFD81135);
+  static const Color paymentCardHighlight = Color(0xFFFFB79B);
+  static const Color paymentCardChip = Color(0xFFFFD15C);
+  static const Color mastercardRed = Color(0xFFEB001B);
+  static const Color mastercardOrange = Color(0xFFF79E1B);
+  static const Color visaBlue = Color(0xFF1769AA);
+  static const Color successArtworkBackground = Color(0xFF9AAEBE);
 }
