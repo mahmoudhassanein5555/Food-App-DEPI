@@ -6,10 +6,6 @@ import 'package:food_app_depi/core/app_string.dart';
 import 'package:food_app_depi/core/widgets/circle_icon_button.dart';
 import 'package:food_app_depi/features/profile/widgets/profile_menu_tile.dart';
 
-/// Icons below use the exact SVGs exported from Figma
-/// (`assets/icons/...`) so colors and shapes match the design pixel for
-/// pixel. Only "Payment Method" falls back to a Material icon, since no SVG
-/// for it was exported yet — swap it in `assets/icons/` + here once it is.
 Widget
 _svgIcon(
   String name,

@@ -13,9 +13,6 @@ dependencies:
 
   cupertino_icons: ^1.0.8
 
-  # Renders the exact SVG icons exported from Figma (pixel-identical to the
-  # design, instead of an approximated icon font). Drop exported .svg files
-  # into assets/icons/ and reference them with SvgPicture.asset(...).
   flutter_svg: ^2.0.10+1
 
 dev_dependencies:
@@ -29,3 +26,8 @@ flutter:
 
   assets:
     - assets/icons/
+
+  fonts:
+    - family: GoogleSansFlex
+      fonts:
+        - asset: assets/fonts/GoogleSansFlex-VariableFont_GRAD,ROND,opsz,slnt,wdth,wght.ttf

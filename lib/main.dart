@@ -21,14 +21,16 @@ class MyApp
     BuildContext context,
   ) {
     return MaterialApp(
-      title: AppString.login,
+      title: AppString.foodAppTitle,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.white,
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.primaryOrange,
+          surface: AppColors.white,
         ),
+        fontFamily: 'GoogleSansFlex',
       ),
       home: const ProfileScreen(),
       routes: AppRoutes.table,

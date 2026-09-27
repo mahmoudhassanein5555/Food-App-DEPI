@@ -1,31 +1,144 @@
 import 'package:flutter/material.dart';
 
-/// Exact colors from the Figma file — no approximated/guessed values.
 class AppColors {
   const AppColors._();
+  static const Color white = Color(
+    0xFFFFFFFF,
+  );
+  static const Color textDark = Color(
+    0xFF32343E,
+  );
+  static const Color textDarkest = Color(
+    0xFF181C2E,
+  );
+  static const Color textGrey = Color(
+    0xFF747783,
+  );
+  static const Color placeholderGrey = Color(
+    0xFFA0A5BA,
+  );
+  static const Color screenBackground = Color(
+    0xFFF6F8FA,
+  );
+  static const Color card = Color(
+    0xFFECF0F4,
+  );
+  static const Color primaryOrange = Color(
+    0xFFFB6F3D,
+  );
+  static const Color secondaryOrange = Color(
+    0xFFFB6D3A,
+  );
+  static const Color peach = Color(
+    0xFFFFC6AE,
+  );
+  static const Color blue = Color(
+    0xFF369BFF,
+  );
+  static const Color indigo = Color(
+    0xFF413DFB,
+  );
+  static const Color teal = Color(
+    0xFF2AE1E1,
+  );
+  static const Color purple = Color(
+    0xFFB33DFB,
+  );
+  static const Color amber = Color(
+    0xFFFFAA2A,
+  );
+  static const Color red = Color(
+    0xFFFB4A59,
+  );
+  static const Color softPink = Color(
+    0xFFF8D9D1,
+  );
+  static const Color softPeach = Color(
+    0xFFF4E2D7,
+  );
+  static const Color softBlue = Color(
+    0xFFE4EDF9,
+  );
+  static const Color softLavender = Color(
+    0xFFE9E5F8,
+  );
+  static const Color successGreen = Color(
+    0xFF67C6A7,
+  );
+  static const Color errorRed = Color(
+    0xFFE76B5C,
+  );
+  static const Color black = Color(
+    0xFF111111,
+  );
+  static const Color darkNavy = Color(
+    0xFF181C2E,
+  );
+  static const Color transparent = Color(
+    0x00000000,
+  );
+  static const Color cartImagePlaceholder = Color(
+    0xFF292A3C,
+  );
+  static const Color cartQuantityButton = Color.fromARGB(
+    255,
+    52,
+    53,
+    71,
+  );
+  static const Color cartHeaderButton = Color(
+    0xFF2A2B3E,
+  );
+  static const Color deliveryAddressBackground = Color(
+    0xFFF0F5FA,
+  );
+  static const Color paymentCardRed = Color(
+    0xFFD81135,
+  );
+  static const Color paymentCardHighlight = Color(
+    0xFFFFB79B,
+  );
+  static const Color paymentCardChip = Color(
+    0xFFFFD15C,
+  );
+  static const Color mastercardRed = Color(
+    0xFFEB001B,
+  );
+  static const Color mastercardOrange = Color(
+    0xFFF79E1B,
+  );
+  static const Color primaryOrangeDark = Color(
+    0xFFE05A2B,
+  );
+  static const Color borderGray = Color(
+    0xFFE8EAED,
+  );
 
-  static const Color white = Color(0xFFFFFFFF);
-
-  // Text
-  static const Color textDark = Color(0xFF32343E); // headings / primary text
-  static const Color textDarkest = Color(0xFF181C2E); // highest-contrast text/surfaces
-  static const Color textGrey = Color(0xFF747783); // secondary text / labels
-  static const Color placeholderGrey = Color(0xFFA0A5BA); // muted icons / disabled
-
-  // Surfaces
-  static const Color screenBackground = Color(0xFFF6F8FA);
-  static const Color card = Color(0xFFECF0F4);
-
-  // Brand / primary
-  static const Color primaryOrange = Color(0xFFFB6F3D); // main CTA buttons
-  static const Color secondaryOrange = Color(0xFFFB6D3A); // coral icon accent
-  static const Color peach = Color(0xFFFFC6AE); // avatar / image placeholder
-
-  // Accents
-  static const Color blue = Color(0xFF369BFF);
-  static const Color indigo = Color(0xFF413DFB);
-  static const Color teal = Color(0xFF2AE1E1);
-  static const Color purple = Color(0xFFB33DFB);
-  static const Color amber = Color(0xFFFFAA2A);
-  static const Color red = Color(0xFFFB4A59);
+  static const Color visaBlue = Color(
+    0xFF1769AA,
+  );
+  static const Color successArtworkBackground = Color(
+    0xFF9AAEBE,
+  );
+  static const Color orderImagePlaceholder = Color(
+    0xFF9AAEBE,
+  );
+  static const Color accentOrange = Color(
+    0xFFFF7622,
+  );
+  static const Color mutedGray = Color(
+    0xFF98A2B3,
+  );
+  static const Color textSecondary = Color(
+    0xFF646982,
+  );
+  static const Color textPrimary = Color(
+    0xFF181C2E,
+  );
+  static const Color offWhite = Color(
+    0xFFF8F9FA,
+  );
+  static const Color lightGray = Color(
+    0xFFE8EAED,
+  );
 }

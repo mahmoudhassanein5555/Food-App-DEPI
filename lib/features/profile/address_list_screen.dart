@@ -196,8 +196,6 @@ class _AddressListScreenState
   }
 }
 
-/// Exact icons exported from Figma for the two known labels. "Other" has no
-/// exported SVG yet, so it falls back to a Material icon.
 Widget
 _labelIcon(
   AddressLabel label,

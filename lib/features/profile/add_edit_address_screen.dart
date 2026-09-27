@@ -5,18 +5,25 @@ import 'package:food_app_depi/core/app_string.dart';
 import 'package:food_app_depi/core/models/address_model.dart';
 import 'package:food_app_depi/core/widgets/circle_icon_button.dart';
 
-class AddEditAddressScreen extends StatefulWidget {
-  /// Pass an existing [AddressModel] to edit it, or leave null to add a new
-  /// address.
+class AddEditAddressScreen
+    extends
+        StatefulWidget {
   final AddressModel? existing;
 
   const AddEditAddressScreen({super.key, this.existing});
 
   @override
-  State<AddEditAddressScreen> createState() => _AddEditAddressScreenState();
+  State<
+    AddEditAddressScreen
+  >
+  createState() => _AddEditAddressScreenState();
 }
 
-class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
+class _AddEditAddressScreenState
+    extends
+        State<
+          AddEditAddressScreen
+        > {
   late final TextEditingController _addressController;
   late final TextEditingController _streetController;
   late final TextEditingController _postCodeController;
@@ -28,16 +35,28 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
     super.initState();
     final existing = widget.existing;
     _addressController = TextEditingController(
-      text: existing?.fullAddress ?? '',
+      text:
+          existing?.fullAddress ??
+          '',
     );
-    _streetController = TextEditingController(text: existing?.street ?? '');
+    _streetController = TextEditingController(
+      text:
+          existing?.street ??
+          '',
+    );
     _postCodeController = TextEditingController(
-      text: existing?.postCode ?? '',
+      text:
+          existing?.postCode ??
+          '',
     );
     _apartmentController = TextEditingController(
-      text: existing?.apartment ?? '',
+      text:
+          existing?.apartment ??
+          '',
     );
-    _selectedLabel = existing?.label ?? AddressLabel.home;
+    _selectedLabel =
+        existing?.label ??
+        AddressLabel.home;
   }
 
   @override
@@ -51,18 +70,26 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
 
   void _save() {
     final address = AddressModel(
-      id: widget.existing?.id ?? DateTime.now().millisecondsSinceEpoch.toString(),
+      id:
+          widget.existing?.id ??
+          DateTime.now().millisecondsSinceEpoch.toString(),
       label: _selectedLabel,
       fullAddress: _addressController.text,
       street: _streetController.text,
       postCode: _postCodeController.text,
       apartment: _apartmentController.text,
     );
-    Navigator.of(context).pop(address);
+    Navigator.of(
+      context,
+    ).pop(
+      address,
+    );
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Scaffold(
       backgroundColor: AppColors.white,
       body: Column(
@@ -82,7 +109,9 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
                     height: 280,
                     child: Stack(
                       children: [
-                        Container(color: AppColors.placeholderGrey),
+                        Container(
+                          color: AppColors.placeholderGrey,
+                        ),
                         Positioned(
                           top: 48,
                           left: 20,
@@ -92,7 +121,9 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
                               icon: Icons.chevron_left,
                               background: AppColors.textDarkest,
                               iconColor: AppColors.white,
-                              onTap: () => Navigator.of(context).maybePop(),
+                              onTap: () => Navigator.of(
+                                context,
+                              ).maybePop(),
                             ),
                           ),
                         ),
@@ -107,7 +138,9 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
                                 ),
                                 decoration: BoxDecoration(
                                   color: AppColors.textDarkest,
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(
+                                    8,
+                                  ),
                                 ),
                                 child: Text(
                                   AppString.moveToEditLocation,
@@ -117,7 +150,9 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 6),
+                              const SizedBox(
+                                height: 6,
+                              ),
                               Container(
                                 width: 22,
                                 height: 22,
@@ -133,11 +168,18 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 8),
+                    padding: const EdgeInsets.fromLTRB(
+                      20,
+                      20,
+                      20,
+                      8,
+                    ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _FieldLabel(AppString.address),
+                        _FieldLabel(
+                          AppString.address,
+                        ),
                         _FormField(
                           controller: _addressController,
                           prefixIcon: SvgPicture.asset(
@@ -146,24 +188,34 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
                             height: 16,
                           ),
                         ),
-                        const SizedBox(height: 18),
+                        const SizedBox(
+                          height: 18,
+                        ),
                         Row(
                           children: [
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  _FieldLabel(AppString.street),
-                                  _FormField(controller: _streetController),
+                                  _FieldLabel(
+                                    AppString.street,
+                                  ),
+                                  _FormField(
+                                    controller: _streetController,
+                                  ),
                                 ],
                               ),
                             ),
-                            const SizedBox(width: 14),
+                            const SizedBox(
+                              width: 14,
+                            ),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  _FieldLabel(AppString.postCode),
+                                  _FieldLabel(
+                                    AppString.postCode,
+                                  ),
                                   _FormField(
                                     controller: _postCodeController,
                                   ),
@@ -172,22 +224,45 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
                             ),
                           ],
                         ),
-                        const SizedBox(height: 18),
-                        _FieldLabel(AppString.appartment),
-                        _FormField(controller: _apartmentController),
-                        const SizedBox(height: 18),
-                        _FieldLabel(AppString.labelAs),
+                        const SizedBox(
+                          height: 18,
+                        ),
+                        _FieldLabel(
+                          AppString.appartment,
+                        ),
+                        _FormField(
+                          controller: _apartmentController,
+                        ),
+                        const SizedBox(
+                          height: 18,
+                        ),
+                        _FieldLabel(
+                          AppString.labelAs,
+                        ),
                         Row(
-                          children: AddressLabel.values.map((label) {
-                            final selected = label == _selectedLabel;
+                          children: AddressLabel.values.map((
+                            label,
+                          ) {
+                            final selected =
+                                label ==
+                                _selectedLabel;
                             return Padding(
-                              padding: const EdgeInsets.only(right: 10),
+                              padding: const EdgeInsets.only(
+                                right: 10,
+                              ),
                               child: ChoiceChip(
-                                label: Text(label.text),
+                                label: Text(
+                                  label.text,
+                                ),
                                 selected: selected,
-                                onSelected: (_) {
-                                  setState(() => _selectedLabel = label);
-                                },
+                                onSelected:
+                                    (
+                                      _,
+                                    ) {
+                                      setState(
+                                        () => _selectedLabel = label,
+                                      );
+                                    },
                                 selectedColor: AppColors.primaryOrange,
                                 backgroundColor: AppColors.card,
                                 labelStyle: TextStyle(
@@ -197,7 +272,9 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
                                   fontWeight: FontWeight.w600,
                                 ),
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
+                                  borderRadius: BorderRadius.circular(
+                                    20,
+                                  ),
                                   side: BorderSide.none,
                                 ),
                               ),
@@ -216,7 +293,12 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
           SafeArea(
             top: false,
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
+              padding: const EdgeInsets.fromLTRB(
+                20,
+                12,
+                20,
+                20,
+              ),
               child: SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -224,9 +306,13 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.primaryOrange,
                     foregroundColor: AppColors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 16,
+                    ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(14),
+                      borderRadius: BorderRadius.circular(
+                        14,
+                      ),
                     ),
                   ),
                   child: Text(
@@ -246,14 +332,20 @@ class _AddEditAddressScreenState extends State<AddEditAddressScreen> {
   }
 }
 
-class _FieldLabel extends StatelessWidget {
+class _FieldLabel
+    extends
+        StatelessWidget {
   final String text;
   const _FieldLabel(this.text);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.only(
+        bottom: 8,
+      ),
       child: Text(
         text,
         style: const TextStyle(
@@ -267,24 +359,35 @@ class _FieldLabel extends StatelessWidget {
   }
 }
 
-class _FormField extends StatelessWidget {
+class _FormField
+    extends
+        StatelessWidget {
   final TextEditingController controller;
   final Widget? prefixIcon;
 
   const _FormField({required this.controller, this.prefixIcon});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return TextField(
       controller: controller,
-      style: const TextStyle(color: AppColors.textDark, fontSize: 14),
+      style: const TextStyle(
+        color: AppColors.textDark,
+        fontSize: 14,
+      ),
       decoration: InputDecoration(
         filled: true,
         fillColor: AppColors.card,
-        prefixIcon: prefixIcon == null
+        prefixIcon:
+            prefixIcon ==
+                null
             ? null
             : Padding(
-                padding: const EdgeInsets.all(14),
+                padding: const EdgeInsets.all(
+                  14,
+                ),
                 child: prefixIcon,
               ),
         prefixIconConstraints: const BoxConstraints(
@@ -296,7 +399,9 @@ class _FormField extends StatelessWidget {
           vertical: 14,
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(
+            12,
+          ),
           borderSide: BorderSide.none,
         ),
       ),

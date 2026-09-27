@@ -5,55 +5,86 @@ import 'package:food_app_depi/core/app_routes.dart';
 import 'package:food_app_depi/core/app_string.dart';
 import 'package:food_app_depi/core/widgets/circle_icon_button.dart';
 
-class PersonalInfoScreen extends StatefulWidget {
+class PersonalInfoScreen
+    extends
+        StatefulWidget {
   const PersonalInfoScreen({super.key});
 
   @override
-  State<PersonalInfoScreen> createState() => _PersonalInfoScreenState();
+  State<
+    PersonalInfoScreen
+  >
+  createState() => _PersonalInfoScreenState();
 }
 
-class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
+class _PersonalInfoScreenState
+    extends
+        State<
+          PersonalInfoScreen
+        > {
   String fullName = 'Vishal Khadok';
   String email = 'hello@halallab.co';
   String phoneNumber = '408-841-0926';
   String bio = 'I love fast food';
 
-  Future<void> _openEdit() async {
-    final result = await Navigator.of(context).pushNamed(
-      AppRoutes.editProfile,
-      arguments: {
-        'fullName': fullName,
-        'email': email,
-        'phoneNumber': phoneNumber,
-        'bio': bio,
-      },
-    );
+  Future<
+    void
+  >
+  _openEdit() async {
+    final result =
+        await Navigator.of(
+          context,
+        ).pushNamed(
+          AppRoutes.editProfile,
+          arguments: {
+            'fullName': fullName,
+            'email': email,
+            'phoneNumber': phoneNumber,
+            'bio': bio,
+          },
+        );
 
     if (result is Map) {
       setState(() {
-        fullName = result['fullName'] ?? fullName;
-        email = result['email'] ?? email;
-        phoneNumber = result['phoneNumber'] ?? phoneNumber;
-        bio = result['bio'] ?? bio;
+        fullName =
+            result['fullName'] ??
+            fullName;
+        email =
+            result['email'] ??
+            email;
+        phoneNumber =
+            result['phoneNumber'] ??
+            phoneNumber;
+        bio =
+            result['bio'] ??
+            bio;
       });
     }
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Scaffold(
       backgroundColor: AppColors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 12),
+              const SizedBox(
+                height: 12,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CircleIconButton.back(context),
+                  CircleIconButton.back(
+                    context,
+                  ),
                   Text(
                     AppString.personalInfo,
                     style: const TextStyle(
@@ -75,14 +106,18 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 24),
+              const SizedBox(
+                height: 24,
+              ),
               Row(
                 children: [
                   const CircleAvatar(
                     radius: 34,
                     backgroundColor: AppColors.peach,
                   ),
-                  const SizedBox(width: 16),
+                  const SizedBox(
+                    width: 16,
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -94,7 +129,9 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                           color: AppColors.textDark,
                         ),
                       ),
-                      const SizedBox(height: 4),
+                      const SizedBox(
+                        height: 4,
+                      ),
                       Text(
                         bio,
                         style: const TextStyle(
@@ -106,7 +143,9 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 24),
+              const SizedBox(
+                height: 24,
+              ),
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 16,
@@ -114,7 +153,9 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                 ),
                 decoration: BoxDecoration(
                   color: AppColors.card,
-                  borderRadius: BorderRadius.circular(18),
+                  borderRadius: BorderRadius.circular(
+                    18,
+                  ),
                 ),
                 child: Column(
                   children: [
@@ -156,21 +197,23 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
   }
 }
 
-class _InfoRow extends StatelessWidget {
+class _InfoRow
+    extends
+        StatelessWidget {
   final Widget icon;
   final String label;
   final String value;
 
-  const _InfoRow({
-    required this.icon,
-    required this.label,
-    required this.value,
-  });
+  const _InfoRow({required this.icon, required this.label, required this.value});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(
+    BuildContext context,
+  ) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.symmetric(
+        vertical: 12,
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -184,7 +227,9 @@ class _InfoRow extends StatelessWidget {
             ),
             child: icon,
           ),
-          const SizedBox(width: 14),
+          const SizedBox(
+            width: 14,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -197,7 +242,9 @@ class _InfoRow extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(height: 2),
+              const SizedBox(
+                height: 2,
+              ),
               Text(
                 value,
                 style: const TextStyle(

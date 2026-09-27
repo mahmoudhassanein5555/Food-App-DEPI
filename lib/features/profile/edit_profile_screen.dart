@@ -89,9 +89,6 @@ class _EditProfileScreenState
       body: SafeArea(
         child: Column(
           children: [
-            // Scrollable content (header + avatar + fields). Only this part
-            // scrolls if the content is taller than the screen or the
-            // keyboard is open — the Save button below stays put.
             Expanded(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(
