@@ -10,8 +10,6 @@ class CircleIconButton
   final Color iconColor;
 
   const CircleIconButton({super.key, required this.icon, this.onTap, this.background = AppColors.card, this.iconColor = AppColors.textDark});
-
-  /// Convenience constructor for the back arrow used on every screen.
   factory CircleIconButton.back(BuildContext context) {
     return CircleIconButton(
       icon: Icons.chevron_left,
