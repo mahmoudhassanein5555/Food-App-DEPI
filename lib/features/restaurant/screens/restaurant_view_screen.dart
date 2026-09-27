@@ -148,7 +148,7 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: foodFilterTags.length,
-        separatorBuilder: (_, _) => const SizedBox(width: 10),
+        separatorBuilder: (_, __) => const SizedBox(width: 10),
         itemBuilder: (context, index) {
           final selected = index == _selectedFilterIndex;
           return GestureDetector(

@@ -115,13 +115,10 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
       children: [
         ClipRRect(
           borderRadius: const BorderRadius.vertical(bottom: Radius.circular(28)),
-          child: Image.network(
-            widget.item.imageUrl,
+          child: Container(
             width: double.infinity,
             height: 300,
-            fit: BoxFit.cover,
-            errorBuilder: (_, _, _) =>
-                Container(height: 300, color: HomeUiColors.imagePlaceholder),
+            color: HomeUiColors.imagePlaceholder,
           ),
         ),
         Positioned(

@@ -17,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final int _cartCount = 2;
+  int _cartCount = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -145,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: mockCategories.length,
-        separatorBuilder: (_, _) => const SizedBox(width: 16),
+        separatorBuilder: (_, __) => const SizedBox(width: 16),
         itemBuilder: (context, index) {
           final category = mockCategories[index];
           return GestureDetector(

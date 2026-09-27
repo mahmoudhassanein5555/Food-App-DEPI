@@ -4,6 +4,7 @@ import '../../../core/app_icons.dart';
 import '../../../core/mock_data.dart';
 import '../../../core/models/app_models.dart';
 import '../../../core/widgets/circle_icon_button.dart';
+import '../../food_listing/screens/food_listing_screen.dart';
 import '../../restaurant/screens/restaurant_view_screen.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -167,7 +168,7 @@ class _SearchScreenState extends State<SearchScreen> {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: mockRestaurants.length,
-        separatorBuilder: (_, _) => const SizedBox(width: 14),
+        separatorBuilder: (_, __) => const SizedBox(width: 14),
         itemBuilder: (context, index) {
           final restaurant = mockRestaurants[index];
           return GestureDetector(
@@ -184,16 +185,10 @@ class _SearchScreenState extends State<SearchScreen> {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(14),
-                    child: Image.network(
-                      restaurant.imageUrl,
+                    child: Container(
                       width: 140,
                       height: 100,
-                      fit: BoxFit.cover,
-                      errorBuilder: (_, _, _) => Container(
-                        width: 140,
-                        height: 100,
-                        color: HomeUiColors.imagePlaceholder,
-                      ),
+                      color: HomeUiColors.imagePlaceholder,
                     ),
                   ),
                   const SizedBox(height: 6),
@@ -237,14 +232,7 @@ class _SuggestedRestaurantTile extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.network(
-                restaurant.imageUrl,
-                width: 44,
-                height: 44,
-                fit: BoxFit.cover,
-                errorBuilder: (_, _, _) =>
-                    Container(width: 44, height: 44, color: HomeUiColors.imagePlaceholder),
-              ),
+              child: Container(width: 44, height: 44, color: HomeUiColors.imagePlaceholder),
             ),
             const SizedBox(width: 12),
             Expanded(
