@@ -19,7 +19,7 @@ class AppIcons {
   static const IconData locationDropdown = Iconsax.arrow_down_1; // Icons.keyboard_arrow_down
   static const IconData cart = Iconsax.shopping_bag; // Icons.shopping_bag_outlined
   static const IconData search = Iconsax.search_normal_1; // Icons.search
-  static const IconData star = Iconsax.star1; // Icons.star (filled)
+  static const IconData star = Iconsax.star; // Icons.star (filled)
   static const IconData delivery = Iconsax.truck_fast; // Icons.local_shipping_outlined
   static const IconData clock = Iconsax.clock; // Icons.access_time
 
@@ -36,7 +36,7 @@ class AppIcons {
 
   // ==================== FOOD DETAILS ====================
   static const IconData favoriteOutline = Iconsax.heart; // Icons.favorite_border
-  static const IconData favoriteFilled = Iconsax.heart5; // Icons.favorite
+  static const IconData favoriteFilled = Iconsax.heart; // Icons.favorite
   static const IconData location = Iconsax.location; // Icons.location_on
   static const IconData ingredientAllergen = Iconsax.warning_2; // Icons.warning_amber (placeholder per ingredient)
 

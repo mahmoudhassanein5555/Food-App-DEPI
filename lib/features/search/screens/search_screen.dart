@@ -4,7 +4,6 @@ import '../../../core/app_icons.dart';
 import '../../../core/mock_data.dart';
 import '../../../core/models/app_models.dart';
 import '../../../core/widgets/circle_icon_button.dart';
-import '../../food_listing/screens/food_listing_screen.dart';
 import '../../restaurant/screens/restaurant_view_screen.dart';
 
 class SearchScreen extends StatefulWidget {
