@@ -94,17 +94,12 @@ class _AddEditAddressScreenState
       backgroundColor: AppColors.white,
       body: Column(
         children: [
-          // Scrollable content (map + form fields). Only this part scrolls
-          // if the content is taller than the screen — the Save Location
-          // button below stays pinned to the bottom, matching the design.
           Expanded(
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Map placeholder area. Replace with a real map widget
-                  // (e.g. google_maps_flutter) once the maps package/API
-                  // key is wired up.
+
                   SizedBox(
                     height: 280,
                     child: Stack(
@@ -288,8 +283,6 @@ class _AddEditAddressScreenState
               ),
             ),
           ),
-          // Fixed footer — always pinned to the bottom of the screen,
-          // matching the Figma design, instead of scrolling with the form.
           SafeArea(
             top: false,
             child: Padding(

@@ -143,9 +143,7 @@ class _EditProfileScreenState
                                 'assets/icons/pin.svg',
                                 width: 14,
                                 height: 14,
-                                // The exported pencil is orange — force it
-                                // white here so it stays visible against the
-                                // orange badge background.
+                                
                                 colorFilter: const ColorFilter.mode(
                                   AppColors.white,
                                   BlendMode.srcIn,
@@ -202,8 +200,6 @@ class _EditProfileScreenState
                 ),
               ),
             ),
-            // Fixed footer — always pinned to the bottom of the screen,
-            // matching the Figma design, instead of scrolling with the form.
             Padding(
               padding: const EdgeInsets.fromLTRB(
                 20,
