@@ -21,41 +21,49 @@ class AuthShell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
       body: Center(
         child: AspectRatio(
           aspectRatio: 375 / 812,
           child: Stack(
             children: [
-              AuthBackground(
+              // =========================
+              // الخلفية
+              // =========================
+              const AuthBackground(
                 showBack: false,
                 onBack: null,
               ),
 
-              // Back button
+              // =========================
+              // زر الرجوع
+              // =========================
               if (showBack)
                 Positioned(
                   left: 24,
                   top: 48,
-                  child: Material(
-                    color: Colors.transparent,
-                    child: InkWell(
-                      onTap: onBack,
-                      borderRadius: BorderRadius.circular(24),
-                      child: const SizedBox(
-                        width: 48,
-                        height: 48,
+                  child: GestureDetector(
+                    onTap: onBack,
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Center(
                         child: Icon(
                           Icons.arrow_back_ios_new,
-                          color: Colors.white,
-                          size: 22,
+                          color: Color(0xFF181C2E),
+                          size: 16,
                         ),
                       ),
                     ),
                   ),
                 ),
 
-              // White content area
+              // =========================
+              // الجزء الأبيض
+              // =========================
               Positioned(
                 left: 0,
                 right: 0,
@@ -71,7 +79,9 @@ class AuthShell extends StatelessWidget {
                 ),
               ),
 
-              // Title + subtitle
+              // =========================
+              // العنوان والوصف
+              // =========================
               Positioned(
                 left: 0,
                 right: 0,
@@ -102,7 +112,9 @@ class AuthShell extends StatelessWidget {
                 ),
               ),
 
-              // Screen content
+              // =========================
+              // محتوى الصفحة
+              // =========================
               Positioned.fill(
                 child: child,
               ),
