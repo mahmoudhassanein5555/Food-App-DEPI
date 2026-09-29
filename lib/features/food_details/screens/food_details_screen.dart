@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../core/home_ui_colors.dart';
-import '../../../core/app_icons.dart';
+import '../../../core/app_colors.dart';
+import '../../../core/widgets/app_svg_icon.dart';
 import '../../../core/models/app_models.dart';
 import '../../../core/widgets/circle_icon_button.dart';
 import '../../../core/widgets/rating_info_row.dart';
@@ -25,7 +25,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HomeUiColors.background,
+      backgroundColor: AppColors.screenBackground,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -45,17 +45,17 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: HomeUiColors.textPrimary,
+                            color: AppColors.textPrimary,
                           ),
                         ),
                         const SizedBox(height: 6),
                         Row(
                           children: [
-                            const Icon(AppIcons.location, size: 15, color: HomeUiColors.locationPin),
+                            const AppSvgIcon('assets/icons/location.svg', size: 15, color: AppColors.errorRed),
                             const SizedBox(width: 4),
                             Text(
                               widget.item.restaurantName,
-                              style: const TextStyle(fontSize: 13, color: HomeUiColors.textMuted),
+                              style: const TextStyle(fontSize: 13, color: AppColors.mutedGray),
                             ),
                           ],
                         ),
@@ -69,7 +69,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                           style: const TextStyle(
                             fontSize: 13,
                             height: 1.5,
-                            color: HomeUiColors.textSecondary,
+                            color: AppColors.textSecondary,
                           ),
                         ),
                         const SizedBox(height: 18),
@@ -78,7 +78,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: HomeUiColors.textMuted,
+                            color: AppColors.mutedGray,
                             letterSpacing: 0.5,
                           ),
                         ),
@@ -90,7 +90,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
-                            color: HomeUiColors.textMuted,
+                            color: AppColors.mutedGray,
                             letterSpacing: 0.5,
                           ),
                         ),
@@ -118,16 +118,16 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
           child: Container(
             width: double.infinity,
             height: 300,
-            color: HomeUiColors.imagePlaceholder,
+            color: AppColors.orderImagePlaceholder,
           ),
         ),
         Positioned(
           top: 16,
           left: 16,
           child: CircleIconButton(
-            icon: AppIcons.back,
-            backgroundColor: HomeUiColors.surface,
-            iconColor: HomeUiColors.textPrimary,
+            icon: 'assets/icons/arrow_left.svg',
+            backgroundColor: AppColors.white,
+            iconColor: AppColors.textPrimary,
             onTap: () => Navigator.pop(context),
           ),
         ),
@@ -135,9 +135,9 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
           top: 16,
           right: 16,
           child: CircleIconButton(
-            icon: _isFavorite ? AppIcons.favoriteFilled : AppIcons.favoriteOutline,
-            backgroundColor: HomeUiColors.surface,
-            iconColor: HomeUiColors.favorite,
+            icon: _isFavorite ? 'assets/icons/heart_filled.svg' : 'assets/icons/heart_outline.svg',
+            backgroundColor: AppColors.white,
+            iconColor: AppColors.primaryOrange,
             onTap: () => setState(() => _isFavorite = !_isFavorite),
           ),
         ),
@@ -159,14 +159,14 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: selected ? HomeUiColors.primaryLight : HomeUiColors.chipUnselectedBg,
+                color: selected ? AppColors.primaryOrangeDark : AppColors.softBlue,
               ),
               child: Text(
                 _sizes[index],
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
-                  color: selected ? Colors.white : HomeUiColors.textSecondary,
+                  color: selected ? Colors.white : AppColors.textSecondary,
                 ),
               ),
             ),
@@ -186,10 +186,10 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: HomeUiColors.chipUnselectedBg,
+              color: AppColors.softPink,
               shape: BoxShape.circle,
             ),
-            child: const Icon(AppIcons.ingredientAllergen, size: 18, color: HomeUiColors.primary),
+            child: const AppSvgIcon('assets/icons/warning.svg', size: 18, color: AppColors.primaryOrange),
           ),
         ),
       ),
@@ -201,7 +201,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
     return Container(
       padding: EdgeInsets.fromLTRB(20, 14, 20, 14 + MediaQuery.of(context).padding.bottom),
       decoration: const BoxDecoration(
-        color: HomeUiColors.surface,
+        color: AppColors.white,
         boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 10)],
       ),
       child: Column(
@@ -215,7 +215,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                 style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
-                  color: HomeUiColors.textPrimary,
+                  color: AppColors.textPrimary,
                 ),
               ),
               _buildQuantityStepper(),
@@ -229,7 +229,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                 SnackBar(content: Text('Added $_quantity x ${widget.item.name} to cart')),
               ),
               style: ElevatedButton.styleFrom(
-                backgroundColor: HomeUiColors.primary,
+                backgroundColor: AppColors.primaryOrange,
                 foregroundColor: Colors.white,
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
@@ -249,12 +249,12 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 6),
       decoration: BoxDecoration(
-        color: HomeUiColors.primaryDark,
+        color: AppColors.darkNavy,
         borderRadius: BorderRadius.circular(24),
       ),
       child: Row(
         children: [
-          _stepperButton(AppIcons.minusButton, () {
+          _stepperButton('assets/icons/minus.svg', () {
             if (_quantity > 1) setState(() => _quantity--);
           }),
           SizedBox(
@@ -265,20 +265,20 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
               style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ),
-          _stepperButton(AppIcons.addButton, () => setState(() => _quantity++)),
+          _stepperButton('assets/icons/add.svg', () => setState(() => _quantity++)),
         ],
       ),
     );
   }
 
-  Widget _stepperButton(IconData icon, VoidCallback onTap) {
+  Widget _stepperButton(String icon, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         width: 26,
         height: 26,
         alignment: Alignment.center,
-        child: Icon(icon, size: 14, color: Colors.white),
+        child: AppSvgIcon(icon, size: 14, color: Colors.white),
       ),
     );
   }

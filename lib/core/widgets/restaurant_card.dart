@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../home_ui_colors.dart';
+import '../app_colors.dart';
 import '../models/app_models.dart';
 import 'rating_info_row.dart';
 
@@ -22,7 +22,7 @@ class RestaurantCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
             child: AspectRatio(
               aspectRatio: 16 / 10,
-              child: Container(color: HomeUiColors.imagePlaceholder),
+              child: Container(color: AppColors.orderImagePlaceholder),
             ),
           ),
           const SizedBox(height: 10),
@@ -31,13 +31,13 @@ class RestaurantCard extends StatelessWidget {
             style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.bold,
-              color: HomeUiColors.textPrimary,
+              color: AppColors.textPrimary,
             ),
           ),
           const SizedBox(height: 2),
           Text(
             restaurant.tagsLine,
-            style: const TextStyle(fontSize: 12, color: HomeUiColors.textMuted),
+            style: const TextStyle(fontSize: 12, color: AppColors.mutedGray),
           ),
           const SizedBox(height: 6),
           RatingInfoRow(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'core/home_ui_colors.dart';
+import 'core/app_colors.dart';
 import 'features/home/screens/home_screen.dart';
 
 void main() => runApp(const PreviewApp());
@@ -13,11 +13,11 @@ class PreviewApp extends StatelessWidget {
       title: 'Food App Preview',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: HomeUiColors.background,
-        fontFamily: 'Poppins',
+        scaffoldBackgroundColor: AppColors.screenBackground,
+        fontFamily: 'Poppins', // swap for whatever font your team uses
         colorScheme: ColorScheme.fromSeed(
-          seedColor: HomeUiColors.primary,
-          primary: HomeUiColors.primary,
+          seedColor: AppColors.primaryOrange,
+          primary: AppColors.primaryOrange,
         ),
         useMaterial3: true,
       ),

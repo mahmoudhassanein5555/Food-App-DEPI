@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../home_ui_colors.dart';
+import '../app_colors.dart';
+import 'app_svg_icon.dart';
 
 /// "Open Restaurants        See All >" style header used in several
 /// screens above a horizontal/vertical list.
@@ -19,23 +20,23 @@ class SectionHeader extends StatelessWidget {
           style: const TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.bold,
-            color: HomeUiColors.textPrimary,
+            color: AppColors.textPrimary,
           ),
         ),
         if (onSeeAll != null)
           GestureDetector(
             onTap: onSeeAll,
             child: Row(
-              children: const [
-                Text(
+              children: [
+                const Text(
                   'See All',
                   style: TextStyle(
                     fontSize: 13,
-                    color: HomeUiColors.textSecondary,
+                    color: AppColors.textSecondary,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                Icon(Icons.chevron_right, size: 16, color: HomeUiColors.textSecondary),
+                AppSvgIcon('assets/icons/chevron_right.svg', size: 16, color: AppColors.textSecondary),
               ],
             ),
           ),

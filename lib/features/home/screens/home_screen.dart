@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../core/home_ui_colors.dart';
-import '../../../core/app_icons.dart';
+import '../../../core/app_colors.dart';
+import '../../../core/widgets/app_svg_icon.dart';
 import '../../../core/mock_data.dart';
 import '../../../core/widgets/circle_icon_button.dart';
 import '../../../core/widgets/restaurant_card.dart';
@@ -8,6 +8,8 @@ import '../../../core/widgets/section_header.dart';
 import '../../food_listing/screens/food_listing_screen.dart';
 import '../../restaurant/screens/restaurant_view_screen.dart';
 import '../../search/screens/search_screen.dart';
+import '../../cart/screens/cart_screen.dart';
+import '../../orders/screens/orders_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HomeUiColors.background,
+      backgroundColor: AppColors.screenBackground,
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
@@ -34,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: HomeUiColors.textPrimary,
+                color: AppColors.textPrimary,
               ),
             ),
             const SizedBox(height: 16),
@@ -69,7 +71,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildTopBar(BuildContext context) {
     return Row(
       children: [
-        const CircleIconButton(icon: AppIcons.menu),
+        CircleIconButton(
+          icon: 'assets/icons/menu.svg',
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const OrdersScreen()),
+          ),
+        ),
         const SizedBox(width: 12),
         Expanded(
           child: Column(
@@ -80,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.bold,
-                  color: HomeUiColors.primary,
+                  color: AppColors.primaryOrange,
                   letterSpacing: 0.5,
                 ),
               ),
@@ -92,20 +100,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      color: HomeUiColors.textPrimary,
+                      color: AppColors.textPrimary,
                     ),
                   ),
-                  Icon(AppIcons.locationDropdown, size: 16, color: HomeUiColors.textPrimary),
+                  AppSvgIcon('assets/icons/dropdown_triangle.svg', size: 16, color: AppColors.textPrimary),
                 ],
               ),
             ],
           ),
         ),
         CircleIconButton(
-          icon: AppIcons.cart,
+          icon: 'assets/icons/cart.svg',
           badgeCount: _cartCount,
-          onTap: () => ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Open cart')),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const CartScreen()),
           ),
         ),
       ],
@@ -121,17 +130,17 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         decoration: BoxDecoration(
-          color: HomeUiColors.surface,
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(color: HomeUiColors.border),
+          border: Border.all(color: AppColors.borderGray),
         ),
         child: Row(
           children: const [
-            Icon(AppIcons.search, size: 20, color: HomeUiColors.textSecondary),
+            AppSvgIcon('assets/icons/search.svg', size: 20, color: AppColors.textSecondary),
             SizedBox(width: 10),
             Text(
               'Search dishes, restaurants',
-              style: TextStyle(fontSize: 14, color: HomeUiColors.textSecondary),
+              style: TextStyle(fontSize: 14, color: AppColors.textSecondary),
             ),
           ],
         ),
@@ -162,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Container(
                     width: 64,
                     height: 64,
-                    color: HomeUiColors.imagePlaceholder,
+                    color: AppColors.orderImagePlaceholder,
                   ),
                 ),
                 const SizedBox(height: 6),
@@ -171,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
-                    color: HomeUiColors.textPrimary,
+                    color: AppColors.textPrimary,
                   ),
                 ),
               ],

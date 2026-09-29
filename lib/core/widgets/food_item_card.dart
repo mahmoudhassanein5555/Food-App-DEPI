@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../home_ui_colors.dart';
-import '../app_icons.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import '../app_colors.dart';
 import '../models/app_models.dart';
 
 /// Grid card used in Food-Burgers listing and Restaurant View screens:
@@ -19,7 +19,7 @@ class FoodItemCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: HomeUiColors.surface,
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
@@ -36,7 +36,7 @@ class FoodItemCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               child: AspectRatio(
                 aspectRatio: 1.3,
-                child: Container(color: HomeUiColors.imagePlaceholder),
+                child: Container(color: AppColors.orderImagePlaceholder),
               ),
             ),
             const SizedBox(height: 8),
@@ -47,14 +47,14 @@ class FoodItemCard extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
-                color: HomeUiColors.textPrimary,
+                color: AppColors.textPrimary,
               ),
             ),
             Text(
               item.restaurantName,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontSize: 11, color: HomeUiColors.textMuted),
+              style: const TextStyle(fontSize: 11, color: AppColors.mutedGray),
             ),
             const SizedBox(height: 8),
             Row(
@@ -65,20 +65,12 @@ class FoodItemCard extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: HomeUiColors.textPrimary,
+                    color: AppColors.textPrimary,
                   ),
                 ),
-                Material(
-                  color: HomeUiColors.primary,
-                  shape: const CircleBorder(),
-                  child: InkWell(
-                    customBorder: const CircleBorder(),
-                    onTap: onAdd,
-                    child: const Padding(
-                      padding: EdgeInsets.all(5),
-                      child: Icon(AppIcons.addButton, size: 16, color: Colors.white),
-                    ),
-                  ),
+                GestureDetector(
+                  onTap: onAdd,
+                  child: SvgPicture.asset('assets/icons/add_circle.svg', width: 30, height: 30),
                 ),
               ],
             ),

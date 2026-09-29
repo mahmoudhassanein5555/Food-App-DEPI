@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../core/home_ui_colors.dart';
-import '../../../core/app_icons.dart';
+import '../../../core/app_colors.dart';
+import '../../../core/widgets/app_svg_icon.dart';
 import '../../../core/mock_data.dart';
 import '../../../core/models/app_models.dart';
 import '../../../core/widgets/circle_icon_button.dart';
@@ -31,7 +31,7 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HomeUiColors.background,
+      backgroundColor: AppColors.screenBackground,
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -53,7 +53,7 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: HomeUiColors.textPrimary,
+                      color: AppColors.textPrimary,
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -61,7 +61,7 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
                     widget.restaurant.description ??
                         'Maecenas dolor eget risus varius blandit sit amet non magna. '
                             'Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
-                    style: const TextStyle(fontSize: 13, height: 1.5, color: HomeUiColors.textSecondary),
+                    style: const TextStyle(fontSize: 13, height: 1.5, color: AppColors.textSecondary),
                   ),
                   const SizedBox(height: 16),
                   _buildFilterChips(),
@@ -71,7 +71,7 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: HomeUiColors.textPrimary,
+                      color: AppColors.textPrimary,
                     ),
                   ),
                   const SizedBox(height: 14),
@@ -94,16 +94,16 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
             controller: _pageController,
             onPageChanged: (i) => setState(() => _activePage = i),
             itemCount: 3,
-            itemBuilder: (context, index) => Container(color: HomeUiColors.imagePlaceholder),
+            itemBuilder: (context, index) => Container(color: AppColors.orderImagePlaceholder),
           ),
         ),
         Positioned(
           top: 16,
           left: 16,
           child: CircleIconButton(
-            icon: AppIcons.back,
-            backgroundColor: HomeUiColors.surface,
-            iconColor: HomeUiColors.textPrimary,
+            icon: 'assets/icons/arrow_left.svg',
+            backgroundColor: AppColors.white,
+            iconColor: AppColors.textPrimary,
             onTap: () => Navigator.pop(context),
           ),
         ),
@@ -111,9 +111,9 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
           top: 16,
           right: 16,
           child: CircleIconButton(
-            icon: AppIcons.moreOptions,
-            backgroundColor: HomeUiColors.surface,
-            iconColor: HomeUiColors.textPrimary,
+            icon: 'assets/icons/more.svg',
+            backgroundColor: AppColors.white,
+            iconColor: AppColors.textPrimary,
             onTap: () {},
           ),
         ),
@@ -157,16 +157,16 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 18),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: selected ? HomeUiColors.primary : HomeUiColors.surface,
+                color: selected ? AppColors.primaryOrange : AppColors.white,
                 borderRadius: BorderRadius.circular(20),
-                border: Border.all(color: selected ? HomeUiColors.primary : HomeUiColors.border),
+                border: Border.all(color: selected ? AppColors.primaryOrange : AppColors.borderGray),
               ),
               child: Text(
                 foodFilterTags[index],
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w600,
-                  color: selected ? Colors.white : HomeUiColors.textPrimary,
+                  color: selected ? Colors.white : AppColors.textPrimary,
                 ),
               ),
             ),

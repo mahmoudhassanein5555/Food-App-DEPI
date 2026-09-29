@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../../core/home_ui_colors.dart';
-import '../../../core/app_icons.dart';
+import '../../../core/app_colors.dart';
+import '../../../core/widgets/app_svg_icon.dart';
 import '../../../core/mock_data.dart';
 import '../../../core/models/app_models.dart';
 import '../../../core/widgets/circle_icon_button.dart';
 import '../../restaurant/screens/restaurant_view_screen.dart';
+import '../../cart/screens/cart_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -31,7 +32,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HomeUiColors.background,
+      backgroundColor: AppColors.screenBackground,
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.fromLTRB(20, 12, 20, 24),
@@ -45,7 +46,7 @@ class _SearchScreenState extends State<SearchScreen> {
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
-                color: HomeUiColors.textPrimary,
+                color: AppColors.textPrimary,
               ),
             ),
             const SizedBox(height: 10),
@@ -56,7 +57,7 @@ class _SearchScreenState extends State<SearchScreen> {
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
-                color: HomeUiColors.textPrimary,
+                color: AppColors.textPrimary,
               ),
             ),
             const SizedBox(height: 10),
@@ -69,7 +70,7 @@ class _SearchScreenState extends State<SearchScreen> {
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
-                color: HomeUiColors.textPrimary,
+                color: AppColors.textPrimary,
               ),
             ),
             const SizedBox(height: 10),
@@ -84,8 +85,8 @@ class _SearchScreenState extends State<SearchScreen> {
     return Row(
       children: [
         CircleIconButton(
-          icon: AppIcons.back,
-          backgroundColor: HomeUiColors.primaryDark,
+          icon: 'assets/icons/arrow_left.svg',
+          backgroundColor: AppColors.darkNavy,
           onTap: () => Navigator.pop(context),
         ),
         const SizedBox(width: 14),
@@ -94,11 +95,18 @@ class _SearchScreenState extends State<SearchScreen> {
           style: TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.bold,
-            color: HomeUiColors.textPrimary,
+            color: AppColors.textPrimary,
           ),
         ),
         const Spacer(),
-        const CircleIconButton(icon: AppIcons.cart, badgeCount: 2),
+        CircleIconButton(
+          icon: 'assets/icons/cart.svg',
+          badgeCount: 2,
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const CartScreen()),
+          ),
+        ),
       ],
     );
   }
@@ -107,18 +115,18 @@ class _SearchScreenState extends State<SearchScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
-        color: HomeUiColors.surface,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: HomeUiColors.border),
+        border: Border.all(color: AppColors.borderGray),
       ),
       child: Row(
         children: [
-          const Icon(AppIcons.search, size: 20, color: HomeUiColors.textSecondary),
+          const AppSvgIcon('assets/icons/search.svg', size: 20, color: AppColors.textSecondary),
           const SizedBox(width: 10),
           Expanded(
             child: TextField(
               controller: _controller,
-              style: const TextStyle(fontSize: 14, color: HomeUiColors.textPrimary),
+              style: const TextStyle(fontSize: 14, color: AppColors.textPrimary),
               decoration: const InputDecoration(
                 border: InputBorder.none,
                 isDense: true,
@@ -128,7 +136,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
           GestureDetector(
             onTap: () => setState(() => _controller.clear()),
-            child: const Icon(AppIcons.clearInput, size: 20, color: HomeUiColors.textSecondary),
+            child: const AppSvgIcon('assets/icons/close_circle.svg', size: 20, color: AppColors.textSecondary),
           ),
         ],
       ),
@@ -146,13 +154,13 @@ class _SearchScreenState extends State<SearchScreen> {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 9),
                 decoration: BoxDecoration(
-                  color: HomeUiColors.surface,
+                  color: AppColors.white,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: HomeUiColors.border),
+                  border: Border.all(color: AppColors.borderGray),
                 ),
                 child: Text(
                   keyword,
-                  style: const TextStyle(fontSize: 13, color: HomeUiColors.textPrimary),
+                  style: const TextStyle(fontSize: 13, color: AppColors.textPrimary),
                 ),
               ),
             ),
@@ -187,7 +195,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     child: Container(
                       width: 140,
                       height: 100,
-                      color: HomeUiColors.imagePlaceholder,
+                      color: AppColors.orderImagePlaceholder,
                     ),
                   ),
                   const SizedBox(height: 6),
@@ -198,7 +206,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
-                      color: HomeUiColors.textPrimary,
+                      color: AppColors.textPrimary,
                     ),
                   ),
                 ],
@@ -231,18 +239,18 @@ class _SuggestedRestaurantTile extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Container(width: 44, height: 44, color: HomeUiColors.imagePlaceholder),
+              child: Container(width: 44, height: 44, color: AppColors.orderImagePlaceholder),
             ),
             const SizedBox(width: 12),
             Expanded(
               child: Text(
                 restaurant.name,
-                style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: HomeUiColors.textPrimary),
+                style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: AppColors.textPrimary),
               ),
             ),
-            Icon(AppIcons.star, size: 14, color: HomeUiColors.primary),
+            AppSvgIcon('assets/icons/star.svg', size: 14, color: AppColors.primaryOrange),
             const SizedBox(width: 4),
-            Text('${restaurant.rating}', style: const TextStyle(fontSize: 12, color: HomeUiColors.textPrimary)),
+            Text('${restaurant.rating}', style: const TextStyle(fontSize: 12, color: AppColors.textPrimary)),
           ],
         ),
       ),

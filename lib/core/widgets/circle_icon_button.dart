@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import '../home_ui_colors.dart';
+import '../app_colors.dart';
+import 'app_svg_icon.dart';
 
 /// Circular icon button used for back/menu/cart/heart/more buttons
 /// across all screens. Configurable background + icon color so it can
 /// sit on both dark navy (menu/cart) and white (back/heart) contexts.
 class CircleIconButton extends StatelessWidget {
-  final IconData icon;
+  final String icon; // path to an SVG asset, e.g. 'assets/icons/arrow_left.svg'
   final VoidCallback? onTap;
   final Color backgroundColor;
   final Color iconColor;
@@ -16,7 +17,7 @@ class CircleIconButton extends StatelessWidget {
     super.key,
     required this.icon,
     this.onTap,
-    this.backgroundColor = HomeUiColors.primaryDark,
+    this.backgroundColor = AppColors.darkNavy,
     this.iconColor = Colors.white,
     this.size = 44,
     this.badgeCount,
@@ -36,7 +37,9 @@ class CircleIconButton extends StatelessWidget {
             child: SizedBox(
               width: size,
               height: size,
-              child: Icon(icon, color: iconColor, size: size * 0.45),
+              child: Center(
+                child: AppSvgIcon(icon, color: iconColor, size: size * 0.45),
+              ),
             ),
           ),
         ),
@@ -47,7 +50,7 @@ class CircleIconButton extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(4),
               decoration: const BoxDecoration(
-                color: HomeUiColors.primary,
+                color: AppColors.primaryOrange,
                 shape: BoxShape.circle,
               ),
               constraints: const BoxConstraints(minWidth: 20, minHeight: 20),
