@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: AppColors.textPrimary,
                     ),
                   ),
-                  AppSvgIcon('assets/icons/dropdown_triangle.svg', size: 16, color: AppColors.textPrimary),
+                  AppSvgIcon('assets/icons/dropdown_triangle.svg', size: 8, color: AppColors.textPrimary),
                 ],
               ),
             ],
@@ -147,47 +147,59 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+Widget _buildCategories(BuildContext context) {
+  final visibleCategories = mockCategories
+      .where(
+        (category) =>
+            category.name == 'Pizza' || category.name == 'Burger',
+      )
+      .take(3)
+      .toList();
 
-  Widget _buildCategories(BuildContext context) {
-    return SizedBox(
-      height: 92,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: mockCategories.length,
-        separatorBuilder: (_, _) => const SizedBox(width: 16),
-        itemBuilder: (context, index) {
-          final category = mockCategories[index];
-          return GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => FoodListingScreen(categoryName: category.name),
+  return SizedBox(
+    height: 92,
+    child: ListView.separated(
+      scrollDirection: Axis.horizontal,
+      itemCount: visibleCategories.length,
+      separatorBuilder: (_, _) => const SizedBox(width: 16),
+      itemBuilder: (context, index) {
+        final category = visibleCategories[index];
+
+        return GestureDetector(
+          onTap: category.name == 'Burger'
+              ? () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => FoodListingScreen(
+                        categoryName: category.name,
+                      ),
+                    ),
+                  )
+              : null,
+          child: Column(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Container(
+                  width: 64,
+                  height: 64,
+                  color: AppColors.orderImagePlaceholder,
+                ),
               ),
-            ),
-            child: Column(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Container(
-                    width: 64,
-                    height: 64,
-                    color: AppColors.orderImagePlaceholder,
-                  ),
+              const SizedBox(height: 6),
+              Text(
+                category.name,
+                style: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary,
                 ),
-                const SizedBox(height: 6),
-                Text(
-                  category.name,
-                  style: const TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.textPrimary,
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
-    );
-  }
+              ),
+            ],
+          ),
+        );
+      },
+    ),
+  );
+}
 }

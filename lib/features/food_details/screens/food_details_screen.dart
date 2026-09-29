@@ -176,25 +176,36 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
     );
   }
 
-  Widget _buildIngredients() {
-    return Row(
-      children: List.generate(
-        4,
-        (index) => Padding(
-          padding: const EdgeInsets.only(right: 12),
-          child: Container(
-            width: 40,
-            height: 40,
-            decoration: BoxDecoration(
-              color: AppColors.softPink,
-              shape: BoxShape.circle,
-            ),
-            child: const AppSvgIcon('assets/icons/warning.svg', size: 18, color: AppColors.primaryOrange),
+Widget _buildIngredients() {
+  const ingredientImages = [
+    'assets/icons/category_food_1.svg',
+    'assets/icons/category_food_2.svg',
+    'assets/icons/category_food_3.svg',
+    'assets/icons/category_food_4.svg',
+    'assets/icons/category_food_5.svg',
+  ];
+
+  return Row(
+    children: ingredientImages.map((imagePath) {
+      return Padding(
+        padding: const EdgeInsets.only(right: 12),
+        child: Container(
+          width: 40,
+          height: 40,
+          decoration: const BoxDecoration(
+            color: AppColors.softPink,
+            shape: BoxShape.circle,
+          ),
+          child: AppSvgIcon(
+            imagePath,
+            size: 18,
+            color: AppColors.primaryOrange,
           ),
         ),
-      ),
-    );
-  }
+      );
+    }).toList(),
+  );
+}
 
   Widget _buildBottomBar(BuildContext context) {
     final total = _unitPrice; // extend with size multiplier if needed

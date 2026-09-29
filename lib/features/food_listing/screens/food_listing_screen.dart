@@ -34,7 +34,7 @@ class _FoodListingScreenState extends State<FoodListingScreen> {
             const SizedBox(height: 14),
             _buildBurgerGrid(context),
             const SizedBox(height: 24),
-            SectionHeader(title: 'Open Restaurants', onSeeAll: () {}),
+            SectionHeader(title: 'Open Restaurants'),
             const SizedBox(height: 14),
             RestaurantCard(
               restaurant: mockRestaurants[1],
@@ -54,7 +54,7 @@ class _FoodListingScreenState extends State<FoodListingScreen> {
   Widget _buildTopBar(BuildContext context) {
     return Row(
       children: [
-        CircleIconButton(icon: 'assets/icons/arrow_left.svg', onTap: () => Navigator.pop(context)),
+        CircleIconButton(icon: 'assets/icons/arrow_left.svg', iconColor: AppColors.black,backgroundColor: AppColors.borderGray, onTap: () => Navigator.pop(context)),
         const SizedBox(width: 12),
         Expanded(
           child: Container(
@@ -75,7 +75,7 @@ class _FoodListingScreenState extends State<FoodListingScreen> {
                     color: AppColors.textPrimary,
                   ),
                 ),
-                const AppSvgIcon('assets/icons/dropdown_triangle.svg', size: 16, color: AppColors.textPrimary),
+                const AppSvgIcon('assets/icons/dropdown_triangle.svg', size: 8, color: AppColors.primaryOrange),
               ],
             ),
           ),

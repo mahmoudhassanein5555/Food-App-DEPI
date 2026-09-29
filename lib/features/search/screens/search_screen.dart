@@ -86,7 +86,8 @@ class _SearchScreenState extends State<SearchScreen> {
       children: [
         CircleIconButton(
           icon: 'assets/icons/arrow_left.svg',
-          backgroundColor: AppColors.darkNavy,
+          iconColor: AppColors.black,
+          backgroundColor: AppColors.softGray,
           onTap: () => Navigator.pop(context),
         ),
         const SizedBox(width: 14),

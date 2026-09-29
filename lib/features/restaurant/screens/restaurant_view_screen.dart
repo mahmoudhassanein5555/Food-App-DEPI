@@ -109,6 +109,7 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
         ),
         Positioned(
           top: 16,
+          width: 30,
           right: 16,
           child: CircleIconButton(
             icon: 'assets/icons/more.svg',

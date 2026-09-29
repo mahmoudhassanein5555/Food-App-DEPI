@@ -15,7 +15,7 @@ class AppSvgIcon extends StatelessWidget {
     this.assetPath, {
     super.key,
     this.size = 24,
-    this.color = Colors.black,
+    this.color = Colors.black, 
   });
 
   @override
