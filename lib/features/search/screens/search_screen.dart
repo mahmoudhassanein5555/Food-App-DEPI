@@ -167,7 +167,7 @@ class _SearchScreenState extends State<SearchScreen> {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: mockRestaurants.length,
-        separatorBuilder: (_, __) => const SizedBox(width: 14),
+        separatorBuilder: (_, _) => const SizedBox(width: 14),
         itemBuilder: (context, index) {
           final restaurant = mockRestaurants[index];
           return GestureDetector(

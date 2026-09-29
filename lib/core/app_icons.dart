@@ -1,12 +1,3 @@
-// Icon set used across the app, based on Iconsax
-// (matches the outline/two-tone style used in the design screenshots).
-//
-// 1) Add the package in pubspec.yaml:
-//      dependencies:
-//        iconsax_flutter: ^1.0.0
-//
-// If you'd rather not add a package, every icon below has a Material
-// fallback noted in the comment — swap `Iconsax.x` for `Icons.x` fast.
 
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:flutter/widgets.dart';
