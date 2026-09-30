@@ -121,7 +121,7 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
       borderRadius: BorderRadius.circular(20),
       onTap: () {},
       child: Padding(
-        padding: const EdgeInsets.all(10), // الحافة الداخلية لتصغير الأيقونة
+        padding: const EdgeInsets.all(10),  
         child: SvgPicture.asset(
           'assets/icons/more.svg',
           colorFilter: const ColorFilter.mode(
