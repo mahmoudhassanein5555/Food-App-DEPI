@@ -108,12 +108,12 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
         ),
         Positioned(
           top: 16,
-          width: 30,
+          width: 40,
           right: 16,
           child: CircleIconButton(
             icon: 'assets/icons/more.svg',
             backgroundColor: AppColors.white,
-            iconColor: AppColors.textPrimary,
+            iconColor: AppColors.textPrimary,            
             onTap: () {},
           ),
         ),

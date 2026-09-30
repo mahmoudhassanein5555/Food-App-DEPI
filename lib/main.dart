@@ -14,7 +14,7 @@ class PreviewApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.screenBackground,
-        fontFamily: 'GoogleSansFlex-VariableFont_GRAD,ROND,opsz,slnt,wdth,wght.ttf',
+        fontFamily: 'GoogleSansFlex',
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.primaryOrange,
           primary: AppColors.primaryOrange,
