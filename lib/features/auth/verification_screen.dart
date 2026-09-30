@@ -11,56 +11,30 @@ class VerificationScreen extends StatefulWidget {
 }
 
 class _VerificationScreenState extends State<VerificationScreen> {
-  final controllers = List.generate(
-    4,
-    (_) => TextEditingController(),
-  );
-
-  final focusNodes = List.generate(
-    4,
-    (_) => FocusNode(),
-  );
+  final controllers = List.generate(4, (_) => TextEditingController());
+  final focusNodes = List.generate(4, (_) => FocusNode());
 
   @override
   void initState() {
     super.initState();
-
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (!mounted) return;
-
-      focusNodes[0].requestFocus();
+      if (mounted) focusNodes[0].requestFocus();
     });
   }
 
   @override
   void dispose() {
-    for (final controller in controllers) {
-      controller.dispose();
-    }
-
-    for (final focusNode in focusNodes) {
-      focusNode.dispose();
-    }
-
+    for (final c in controllers) c.dispose();
+    for (final f in focusNodes) f.dispose();
     super.dispose();
   }
 
-  void _handleChanged(String value, int index) {
-    if (value.isNotEmpty) {
-      if (index < 3) {
-        focusNodes[index + 1].requestFocus();
-      } else {
-        FocusScope.of(context).unfocus();
-      }
+  void _next(int index) {
+    if (index < 3) {
+      focusNodes[index + 1].requestFocus();
+    } else {
+      FocusScope.of(context).unfocus();
     }
-  }
-
-  void _handleTap(int index) {
-    controllers[index].selection = TextSelection.fromPosition(
-      TextPosition(
-        offset: controllers[index].text.length,
-      ),
-    );
   }
 
   @override
@@ -72,12 +46,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
       onBack: () => Navigator.pop(context),
       child: Positioned.fill(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(
-            24,
-            184,
-            24,
-            0,
-          ),
+          padding: const EdgeInsets.fromLTRB(24, 184, 24, 0),
           child: Column(
             children: [
               const Text(
@@ -88,91 +57,73 @@ class _VerificationScreenState extends State<VerificationScreen> {
                   color: Colors.white,
                 ),
               ),
-
               const SizedBox(height: 48),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: List.generate(
                   4,
-                  (index) {
-                    return SizedBox(
-                      width: 62,
-                      height: 62,
-                      child: TextField(
-                        controller: controllers[index],
-                        focusNode: focusNodes[index],
-                        autofocus: index == 0,
-                        maxLength: 1,
-                        textAlign: TextAlign.center,
-                        keyboardType: TextInputType.number,
-                        textInputAction: index == 3
-                            ? TextInputAction.done
-                            : TextInputAction.next,
-                        style: const TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xFF2D3142),
+                  (i) => SizedBox(
+                    width: 62,
+                    height: 62,
+                    child: TextField(
+                      controller: controllers[i],
+                      focusNode: focusNodes[i],
+                      autofocus: i == 0,
+                      maxLength: 1,
+                      textAlign: TextAlign.center,
+                      keyboardType: TextInputType.number,
+                      textInputAction: i == 3
+                          ? TextInputAction.done
+                          : TextInputAction.next,
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFF2D3142),
+                      ),
+                      onTap: () {
+                        controllers[i].selection =
+                            TextSelection.fromPosition(
+                          TextPosition(
+                            offset: controllers[i].text.length,
+                          ),
+                        );
+                      },
+                      onChanged: (value) {
+                        if (value.isNotEmpty) _next(i);
+                      },
+                      onSubmitted: (_) => _next(i),
+                      decoration: InputDecoration(
+                        counterText: '',
+                        filled: true,
+                        fillColor: const Color(0xFFF0F5FA),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide:
+                              const BorderSide(color: Colors.white),
                         ),
-                        onTap: () {
-                          _handleTap(index);
-                        },
-                        onChanged: (value) {
-                          _handleChanged(
-                            value,
-                            index,
-                          );
-                        },
-                        onSubmitted: (_) {
-                          if (index < 3) {
-                            focusNodes[index + 1].requestFocus();
-                          } else {
-                            FocusScope.of(context).unfocus();
-                          }
-                        },
-                        decoration: InputDecoration(
-                          counterText: '',
-                          filled: true,
-                          fillColor: const Color(0xFFF0F5FA),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Colors.white,
-                            ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Colors.white,
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: const BorderSide(
-                              color: Colors.white,
-                              width: 1.5,
-                            ),
-                          ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide:
+                              const BorderSide(color: Colors.white),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide:
+                              const BorderSide(color: Colors.white),
                         ),
                       ),
-                    );
-                  },
+                    ),
+                  ),
                 ),
               ),
-
               const SizedBox(height: 45),
-
               AuthButton(
                 label: 'VERIFY',
                 onPressed: () {
-                  final code = controllers
-                      .map((controller) => controller.text)
-                      .join();
+                  final code =
+                      controllers.map((c) => c.text).join();
 
-                  debugPrint(
-                    'Verification code: $code',
-                  );
-
+                  debugPrint('Verification code: $code');
                   Navigator.pop(context);
                 },
               ),
