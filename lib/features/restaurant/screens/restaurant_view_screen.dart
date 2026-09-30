@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import '../../../core/app_colors.dart';
 import '../../../core/mock_data.dart';
 import '../../../core/models/app_models.dart';
@@ -107,16 +108,32 @@ class _RestaurantViewScreenState extends State<RestaurantViewScreen> {
           ),
         ),
         Positioned(
-          top: 16,
-          width: 40,
-          right: 16,
-          child: CircleIconButton(
-            icon: 'assets/icons/more.svg',
-            backgroundColor: AppColors.white,
-            iconColor: AppColors.textPrimary,            
-            onTap: () {},
+  top: 16,
+  right: 16,
+  child: Container(
+    width: 40,
+    height: 40,
+    decoration: const BoxDecoration(
+      color: AppColors.white,
+      shape: BoxShape.circle,
+    ),
+    child: InkWell(
+      borderRadius: BorderRadius.circular(20),
+      onTap: () {},
+      child: Padding(
+        padding: const EdgeInsets.all(10), // الحافة الداخلية لتصغير الأيقونة
+        child: SvgPicture.asset(
+          'assets/icons/more.svg',
+          colorFilter: const ColorFilter.mode(
+            AppColors.textPrimary,
+            BlendMode.srcIn,
           ),
         ),
+      ),
+    ),
+  ),
+),
+        
         Positioned(
           bottom: 12,
           left: 0,
