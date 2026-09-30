@@ -135,10 +135,13 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
             ),
           ),
-          GestureDetector(
-            onTap: () => setState(() => _controller.clear()),
-            child: const AppSvgIcon('assets/icons/close_circle.svg', size: 20, color: AppColors.textSecondary),
-          ),
+       CircleIconButton(
+  icon: 'assets/icons/wrong.svg',
+  backgroundColor: AppColors.borderGray, 
+  iconColor: AppColors.white,
+  size: 20,       
+  onTap: () => setState(() => _controller.clear()),
+)
         ],
       ),
     );

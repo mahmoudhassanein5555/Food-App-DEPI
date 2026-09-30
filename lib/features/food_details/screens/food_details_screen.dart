@@ -51,7 +51,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                         const SizedBox(height: 6),
                         Row(
                           children: [
-                            const AppSvgIcon('assets/icons/location.svg', size: 40, color: AppColors.errorRed),
+                            const AppSvgIcon('assets/icons/location.svg', size: 13,),
                             const SizedBox(width: 4),
                             Text(
                               widget.item.restaurantName,
