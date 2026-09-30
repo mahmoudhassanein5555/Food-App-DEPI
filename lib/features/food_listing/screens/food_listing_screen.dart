@@ -9,7 +9,6 @@ import '../../../core/widgets/section_header.dart';
 import '../../food_details/screens/food_details_screen.dart';
 import '../../restaurant/screens/restaurant_view_screen.dart';
 
-/// Listing screen for a food category (design shows "Food - Burgers").
 class FoodListingScreen extends StatefulWidget {
   final String categoryName;
 
@@ -30,7 +29,7 @@ class _FoodListingScreenState extends State<FoodListingScreen> {
           children: [
             _buildTopBar(context),
             const SizedBox(height: 20),
-            SectionHeader(title: 'Popular Burgers', onSeeAll: () {}),
+            SectionHeader(title: 'Popular Burgers'),
             const SizedBox(height: 14),
             _buildBurgerGrid(context),
             const SizedBox(height: 24),
@@ -65,7 +64,6 @@ class _FoodListingScreenState extends State<FoodListingScreen> {
               border: Border.all(color: AppColors.borderGray),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   widget.categoryName.toUpperCase(),

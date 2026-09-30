@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import '../app_colors.dart';
 import 'app_svg_icon.dart';
-
-/// The "★ 4.7   🚚 Free   🕐 20 min" row used in restaurant/food cards
-/// on Home, Food Details, and Restaurant View screens.
 class RatingInfoRow extends StatelessWidget {
   final double rating;
   final bool freeDelivery;

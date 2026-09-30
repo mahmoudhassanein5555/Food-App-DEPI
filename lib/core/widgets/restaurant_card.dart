@@ -3,8 +3,7 @@ import '../app_colors.dart';
 import '../models/app_models.dart';
 import 'rating_info_row.dart';
 
-/// Full-width restaurant card used on Home ("Open Restaurants") and
-/// Food-Burgers listing ("Open Restaurants") screens.
+
 class RestaurantCard extends StatelessWidget {
   final Restaurant restaurant;
   final VoidCallback? onTap;

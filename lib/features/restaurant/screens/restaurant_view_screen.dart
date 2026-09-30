@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../../core/app_colors.dart';
-import '../../../core/widgets/app_svg_icon.dart';
 import '../../../core/mock_data.dart';
 import '../../../core/models/app_models.dart';
 import '../../../core/widgets/circle_icon_button.dart';

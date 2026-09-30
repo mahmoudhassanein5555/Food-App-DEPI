@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-/// Drop-in replacement for `Icon(IconData)` that renders an SVG file
-/// instead, tinted to [color].
-///
-/// Usage — pass the asset path directly, no icon-constants class needed:
-///   AppSvgIcon('assets/icons/search.svg', size: 20, color: AppColors.textSecondary)
+
 class AppSvgIcon extends StatelessWidget {
   final String assetPath;
   final double size;

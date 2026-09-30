@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../app_colors.dart';
 import 'app_svg_icon.dart';
 
-/// "Open Restaurants        See All >" style header used in several
-/// screens above a horizontal/vertical list.
 class SectionHeader extends StatelessWidget {
   final String title;
   final VoidCallback? onSeeAll;

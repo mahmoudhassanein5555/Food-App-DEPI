@@ -8,7 +8,7 @@ class FoodCategory {
 class Restaurant {
   final String id;
   final String name;
-  final String tagsLine; // e.g. "Burger - Chiken - Riche - Wings"
+  final String tagsLine; 
   final double rating;
   final bool freeDelivery;
   final int timeMinutes;

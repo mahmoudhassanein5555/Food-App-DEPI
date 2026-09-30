@@ -3,8 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../app_colors.dart';
 import '../models/app_models.dart';
 
-/// Grid card used in Food-Burgers listing and Restaurant View screens:
-/// image, name, restaurant name, price + orange "+" add button.
 class FoodItemCard extends StatelessWidget {
   final FoodItem item;
   final VoidCallback? onTap;

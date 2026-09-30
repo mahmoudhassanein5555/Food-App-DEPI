@@ -51,7 +51,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                         const SizedBox(height: 6),
                         Row(
                           children: [
-                            const AppSvgIcon('assets/icons/location.svg', size: 15, color: AppColors.errorRed),
+                            const AppSvgIcon('assets/icons/location.svg', size: 40, color: AppColors.errorRed),
                             const SizedBox(width: 4),
                             Text(
                               widget.item.restaurantName,
@@ -96,7 +96,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                         ),
                         const SizedBox(height: 10),
                         _buildIngredients(),
-                        const SizedBox(height: 110), // room for bottom bar
+                        const SizedBox(height: 110), 
                       ],
                     ),
                   ),
@@ -190,15 +190,15 @@ Widget _buildIngredients() {
       return Padding(
         padding: const EdgeInsets.only(right: 12),
         child: Container(
-          width: 40,
-          height: 40,
+          width: 30,
+          height: 30,
           decoration: const BoxDecoration(
             color: AppColors.softPink,
             shape: BoxShape.circle,
           ),
           child: AppSvgIcon(
             imagePath,
-            size: 18,
+            size: 40,
             color: AppColors.primaryOrange,
           ),
         ),
@@ -208,7 +208,7 @@ Widget _buildIngredients() {
 }
 
   Widget _buildBottomBar(BuildContext context) {
-    final total = _unitPrice; // extend with size multiplier if needed
+    final total = _unitPrice; 
     return Container(
       padding: EdgeInsets.fromLTRB(20, 14, 20, 14 + MediaQuery.of(context).padding.bottom),
       decoration: const BoxDecoration(

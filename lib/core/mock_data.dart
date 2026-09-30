@@ -1,7 +1,6 @@
 import 'models/app_models.dart';
 
-/// Placeholder image URL generator — swap with your real assets/network
-/// images later. Keeping one helper makes that a single find/replace.
+
 String placeholderImage(int seed, {int w = 400, int h = 400}) =>
     'https://picsum.photos/seed/$seed/$w/$h';
 
