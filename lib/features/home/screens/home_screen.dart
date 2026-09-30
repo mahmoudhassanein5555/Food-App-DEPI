@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../core/app_colors.dart';
 import '../../../core/widgets/app_svg_icon.dart';
 import '../../../core/mock_data.dart';
@@ -31,13 +32,21 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             _buildTopBar(context),
             const SizedBox(height: 20),
-            const Text(
-              'Hey Halal, Good Afternoon!',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textPrimary,
-              ),
+            Row(
+              children: const [
+                Text(
+                  'Hey Halal,',
+                  style: TextStyle(fontSize: 20, color: AppColors.textPrimary),
+                ),
+                Text(
+                  ' Good Afternoon!',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.textPrimary,
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 16),
             _buildSearchBar(context),
@@ -48,7 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 24),
             SectionHeader(title: 'Open Restaurants', onSeeAll: () {}),
             const SizedBox(height: 12),
-            ...mockRestaurants.take(3).map(
+            ...mockRestaurants
+                .take(3)
+                .map(
                   (r) => Padding(
                     padding: const EdgeInsets.only(bottom: 18),
                     child: RestaurantCard(
@@ -103,7 +114,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: AppColors.textPrimary,
                     ),
                   ),
-                  AppSvgIcon('assets/icons/dropdown_triangle.svg', size: 8, color: AppColors.textPrimary),
+                  AppSvgIcon(
+                    'assets/icons/dropdown_triangle.svg',
+                    size: 8,
+                    color: AppColors.textPrimary,
+                  ),
                 ],
               ),
             ],
@@ -136,7 +151,11 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         child: Row(
           children: const [
-            AppSvgIcon('assets/icons/search.svg', size: 20, color: AppColors.textSecondary),
+            AppSvgIcon(
+              'assets/icons/search.svg',
+              size: 20,
+              color: AppColors.textSecondary,
+            ),
             SizedBox(width: 10),
             Text(
               'Search dishes, restaurants',
@@ -147,59 +166,58 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-Widget _buildCategories(BuildContext context) {
-  final visibleCategories = mockCategories
-      .where(
-        (category) =>
-            category.name == 'Pizza' || category.name == 'Burger',
-      )
-      .take(3)
-      .toList();
 
-  return SizedBox(
-    height: 92,
-    child: ListView.separated(
-      scrollDirection: Axis.horizontal,
-      itemCount: visibleCategories.length,
-      separatorBuilder: (_, _) => const SizedBox(width: 16),
-      itemBuilder: (context, index) {
-        final category = visibleCategories[index];
+  Widget _buildCategories(BuildContext context) {
+    final visibleCategories = mockCategories
+        .where(
+          (category) => category.name == 'Pizza' || category.name == 'Burger',
+        )
+        .take(3)
+        .toList();
 
-        return GestureDetector(
-          onTap: category.name == 'Burger'
-              ? () => Navigator.push(
+    return SizedBox(
+      height: 92,
+      child: ListView.separated(
+        scrollDirection: Axis.horizontal,
+        itemCount: visibleCategories.length,
+        separatorBuilder: (_, _) => const SizedBox(width: 16),
+        itemBuilder: (context, index) {
+          final category = visibleCategories[index];
+
+          return GestureDetector(
+            onTap: category.name == 'Burger'
+                ? () => Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => FoodListingScreen(
-                        categoryName: category.name,
-                      ),
+                      builder: (_) =>
+                          FoodListingScreen(categoryName: category.name),
                     ),
                   )
-              : null,
-          child: Column(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: Container(
-                  width: 64,
-                  height: 64,
-                  color: AppColors.orderImagePlaceholder,
+                : null,
+            child: Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(16),
+                  child: Container(
+                    width: 64,
+                    height: 64,
+                    color: AppColors.orderImagePlaceholder,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                category.name,
-                style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textPrimary,
+                const SizedBox(height: 6),
+                Text(
+                  category.name,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.textPrimary,
+                  ),
                 ),
-              ),
-            ],
-          ),
-        );
-      },
-    ),
-  );
-}
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
 }
