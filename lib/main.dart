@@ -13,13 +13,11 @@ class PreviewApp extends StatelessWidget {
       title: 'Food App Preview',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: AppColors.screenBackground,
+        useMaterial3: true,
         fontFamily: 'GoogleSansFlex',
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.primaryOrange,
-          primary: AppColors.primaryOrange,
         ),
-        useMaterial3: true,
       ),
       home: const HomeScreen(),
     );

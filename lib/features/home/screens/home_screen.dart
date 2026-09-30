@@ -84,6 +84,9 @@ class _HomeScreenState extends State<HomeScreen> {
       children: [
         CircleIconButton(
           icon: 'assets/icons/menu.svg',
+          backgroundColor: AppColors.borderGray,
+          size: 45,
+          iconColor: AppColors.black,
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const OrdersScreen()),
@@ -110,7 +113,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Halal Lab office',
                     style: TextStyle(
                       fontSize: 14,
-                      fontWeight: FontWeight.w600,
                       color: AppColors.textPrimary,
                     ),
                   ),
