@@ -44,7 +44,7 @@ class ScreenHeader extends StatelessWidget {
               ),
             ),
             const Spacer(),
-            ?trailing,
+            // ?trailing,
           ],
         ),
       ),

@@ -1,38 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_depi/core/app_colors.dart';
 import 'package:food_app_depi/core/app_routes.dart';
-import 'package:food_app_depi/core/app_string.dart';
-import 'package:food_app_depi/features/profile/profile_screen.dart';
+import 'package:food_app_depi/features/splash/splash_screen.dart';
 
-void
-main() {
-  runApp(
-    const MyApp(),
-  );
+void main() {
+  runApp(const FoodDeliveryApp());
 }
 
-class MyApp
-    extends
-        StatelessWidget {
-  const MyApp({super.key});
+class FoodDeliveryApp extends StatelessWidget {
+  const FoodDeliveryApp({super.key});
 
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
     return MaterialApp(
-      title: AppString.foodAppTitle,
       debugShowCheckedModeBanner: false,
+      title: 'Food Delivery',
       theme: ThemeData(
         useMaterial3: true,
+        fontFamily: 'GoogleSansFlex',
         scaffoldBackgroundColor: AppColors.white,
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.primaryOrange,
-          surface: AppColors.white,
         ),
-        fontFamily: 'GoogleSansFlex',
       ),
-      home: const ProfileScreen(),
+      home: const SplashScreen(),
       routes: AppRoutes.table,
       onGenerateRoute: AppRoutes.onGenerateRoute,
     );
