@@ -6,27 +6,15 @@ import 'package:food_app_depi/core/app_string.dart';
 import 'package:food_app_depi/core/models/address_model.dart';
 import 'package:food_app_depi/core/widgets/circle_icon_button.dart';
 
-class AddressListScreen
-    extends
-        StatefulWidget {
+class AddressListScreen extends StatefulWidget {
   const AddressListScreen({super.key});
 
   @override
-  State<
-    AddressListScreen
-  >
-  createState() => _AddressListScreenState();
+  State<AddressListScreen> createState() => _AddressListScreenState();
 }
 
-class _AddressListScreenState
-    extends
-        State<
-          AddressListScreen
-        > {
-  final List<
-    AddressModel
-  >
-  _addresses = [
+class _AddressListScreenState extends State<AddressListScreen> {
+  final List<AddressModel> _addresses = [
     const AddressModel(
       id: '1',
       label: AddressLabel.home,
@@ -45,19 +33,15 @@ class _AddressListScreenState
     ),
   ];
 
-  Future<
-    void
-  >
-  _openAddOrEdit({
+  Future<void> _openAddOrEdit({
     AddressModel? existing,
   }) async {
-    final result =
-        await Navigator.of(
-          context,
-        ).pushNamed(
-          AppRoutes.addEditAddress,
-          arguments: existing,
-        );
+    final result = await Navigator.of(
+      context,
+    ).pushNamed(
+      AppRoutes.addEditAddress,
+      arguments: existing,
+    );
 
     if (result is AddressModel) {
       setState(() {
@@ -65,11 +49,9 @@ class _AddressListScreenState
           (
             a,
           ) =>
-              a.id ==
-              result.id,
+              a.id == result.id,
         );
-        if (index ==
-            -1) {
+        if (index == -1) {
           _addresses.add(
             result,
           );
@@ -88,8 +70,7 @@ class _AddressListScreenState
         (
           a,
         ) =>
-            a.id ==
-            address.id,
+            a.id == address.id,
       ),
     );
   }
@@ -119,9 +100,9 @@ class _AddressListScreenState
                   const SizedBox(
                     width: 16,
                   ),
-                  Text(
+                  const Text(
                     AppString.myAddress,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: AppColors.textDark,
@@ -135,29 +116,28 @@ class _AddressListScreenState
               Expanded(
                 child: ListView.separated(
                   itemCount: _addresses.length,
-                  separatorBuilder:
-                      (
-                        _,
-                        _,
-                      ) => const SizedBox(
-                        height: 14,
+                  separatorBuilder: (
+                    _,
+                    __,
+                  ) =>
+                      const SizedBox(
+                    height: 14,
+                  ),
+                  itemBuilder: (
+                    context,
+                    index,
+                  ) {
+                    final address = _addresses[index];
+                    return _AddressCard(
+                      address: address,
+                      onEdit: () => _openAddOrEdit(
+                        existing: address,
                       ),
-                  itemBuilder:
-                      (
-                        context,
-                        index,
-                      ) {
-                        final address = _addresses[index];
-                        return _AddressCard(
-                          address: address,
-                          onEdit: () => _openAddOrEdit(
-                            existing: address,
-                          ),
-                          onDelete: () => _delete(
-                            address,
-                          ),
-                        );
-                      },
+                      onDelete: () => _delete(
+                        address,
+                      ),
+                    );
+                  },
                 ),
               ),
               SizedBox(
@@ -176,9 +156,9 @@ class _AddressListScreenState
                       ),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     AppString.addNewAddress,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.w700,
                       letterSpacing: 0.5,
                     ),
@@ -196,8 +176,7 @@ class _AddressListScreenState
   }
 }
 
-Widget
-_labelIcon(
+Widget _labelIcon(
   AddressLabel label,
 ) {
   switch (label) {
@@ -222,9 +201,7 @@ _labelIcon(
   }
 }
 
-class _AddressCard
-    extends
-        StatelessWidget {
+class _AddressCard extends StatelessWidget {
   final AddressModel address;
   final VoidCallback onEdit;
   final VoidCallback onDelete;

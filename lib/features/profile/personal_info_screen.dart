@@ -85,9 +85,9 @@ class _PersonalInfoScreenState
                   CircleIconButton.back(
                     context,
                   ),
-                  Text(
+                  const Text(
                     AppString.personalInfo,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: AppColors.textDark,
@@ -95,9 +95,9 @@ class _PersonalInfoScreenState
                   ),
                   TextButton(
                     onPressed: _openEdit,
-                    child: Text(
+                    child: const Text(
                       AppString.edit,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: AppColors.primaryOrange,
                         fontWeight: FontWeight.w700,
                         decoration: TextDecoration.underline,

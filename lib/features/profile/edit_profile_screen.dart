@@ -108,9 +108,9 @@ class _EditProfileScreenState
                         const SizedBox(
                           width: 16,
                         ),
-                        Text(
+                        const Text(
                           AppString.editProfile,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w700,
                             color: AppColors.textDark,
@@ -157,7 +157,7 @@ class _EditProfileScreenState
                     const SizedBox(
                       height: 28,
                     ),
-                    _FieldLabel(
+                    const _FieldLabel(
                       AppString.fullName,
                     ),
                     _FormField(
@@ -166,7 +166,7 @@ class _EditProfileScreenState
                     const SizedBox(
                       height: 18,
                     ),
-                    _FieldLabel(
+                    const _FieldLabel(
                       AppString.email,
                     ),
                     _FormField(
@@ -176,7 +176,7 @@ class _EditProfileScreenState
                     const SizedBox(
                       height: 18,
                     ),
-                    _FieldLabel(
+                    const _FieldLabel(
                       AppString.phoneNumber,
                     ),
                     _FormField(
@@ -186,7 +186,7 @@ class _EditProfileScreenState
                     const SizedBox(
                       height: 18,
                     ),
-                    _FieldLabel(
+                    const _FieldLabel(
                       AppString.bio,
                     ),
                     _FormField(
@@ -223,9 +223,9 @@ class _EditProfileScreenState
                       ),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     AppString.save,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.w700,
                       letterSpacing: 0.5,
                     ),

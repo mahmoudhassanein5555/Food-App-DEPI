@@ -7,14 +7,14 @@ class OrdersTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TabBar(
+    return const TabBar(
       indicatorColor: AppColors.primaryOrange,
       indicatorWeight: 2,
       dividerColor: AppColors.borderGray,
       labelColor: AppColors.primaryOrangeDark,
       unselectedLabelColor: AppColors.mutedGray,
-      labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
-      tabs: const [
+      labelStyle: TextStyle(fontWeight: FontWeight.w600, fontSize: 13),
+      tabs: [
         Tab(text: AppString.ongoingOrders),
         Tab(text: AppString.orderHistory),
       ],

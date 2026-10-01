@@ -29,11 +29,11 @@ class _FoodListingScreenState extends State<FoodListingScreen> {
           children: [
             _buildTopBar(context),
             const SizedBox(height: 20),
-            SectionHeader(title: 'Popular Burgers'),
+            const SectionHeader(title: 'Popular Burgers'),
             const SizedBox(height: 14),
             _buildBurgerGrid(context),
             const SizedBox(height: 24),
-            SectionHeader(title: 'Open Restaurants'),
+            const SectionHeader(title: 'Open Restaurants'),
             const SizedBox(height: 14),
             RestaurantCard(
               restaurant: mockRestaurants[1],

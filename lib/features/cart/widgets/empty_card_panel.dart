@@ -15,16 +15,16 @@ class EmptyCardPanel extends StatelessWidget {
         color: AppColors.offWhite,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Column(
+      child: const Column(
         children: [
-          const CardIllustration(),
-          const SizedBox(height: 14),
-          const Text(
+          CardIllustration(),
+          SizedBox(height: 14),
+          Text(
             AppString.noMastercardAdded,
             style: TextStyle(color: AppColors.textPrimary, fontSize: 13),
           ),
-          const SizedBox(height: 4),
-          const Text(
+          SizedBox(height: 4),
+          Text(
             AppString.addMastercardDescription,
             textAlign: TextAlign.center,
             style: TextStyle(

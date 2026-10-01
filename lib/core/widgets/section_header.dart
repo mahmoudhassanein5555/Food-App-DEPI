@@ -24,9 +24,9 @@ class SectionHeader extends StatelessWidget {
         if (onSeeAll != null)
           GestureDetector(
             onTap: onSeeAll,
-            child: Row(
+            child: const Row(
               children: [
-                const Text(
+                Text(
                   'See All',
                   style: TextStyle(
                     fontSize: 13,

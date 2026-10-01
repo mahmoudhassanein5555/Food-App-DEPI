@@ -74,10 +74,10 @@ class OrdersScreen extends StatelessWidget {
           child: Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 440),
-              child: Column(
+              child: const Column(
                 children: [
-                  const OrdersHeader(),
-                  const OrdersTabBar(),
+                  OrdersHeader(),
+                  OrdersTabBar(),
                   Expanded(
                     child: TabBarView(
                       children: [

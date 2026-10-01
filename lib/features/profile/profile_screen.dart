@@ -43,9 +43,9 @@ class ProfileScreen
                   CircleIconButton.back(
                     context,
                   ),
-                  Text(
+                  const Text(
                     AppString.profile,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: AppColors.textDark,
@@ -60,13 +60,13 @@ class ProfileScreen
               const SizedBox(
                 height: 24,
               ),
-              Row(
+              const Row(
                 children: [
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 34,
                     backgroundColor: AppColors.peach,
                   ),
-                  const SizedBox(
+                  SizedBox(
                     width: 16,
                   ),
                   Column(
@@ -74,13 +74,13 @@ class ProfileScreen
                     children: [
                       Text(
                         'Vishal Khadok',
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
                           color: AppColors.textDark,
                         ),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         height: 4,
                       ),
                       Text(

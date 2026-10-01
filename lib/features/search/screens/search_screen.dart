@@ -252,7 +252,7 @@ class _SuggestedRestaurantTile extends StatelessWidget {
                 style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: AppColors.textPrimary),
               ),
             ),
-            AppSvgIcon('assets/icons/star.svg', size: 14, color: AppColors.primaryOrange),
+            const AppSvgIcon('assets/icons/star.svg', size: 14, color: AppColors.primaryOrange),
             const SizedBox(width: 4),
             Text('${restaurant.rating}', style: const TextStyle(fontSize: 12, color: AppColors.textPrimary)),
           ],

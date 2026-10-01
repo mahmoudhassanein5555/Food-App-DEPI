@@ -137,9 +137,9 @@ class _AddEditAddressScreenState
                                     8,
                                   ),
                                 ),
-                                child: Text(
+                                child: const Text(
                                   AppString.moveToEditLocation,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     color: AppColors.white,
                                     fontSize: 12,
                                   ),
@@ -172,7 +172,7 @@ class _AddEditAddressScreenState
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        _FieldLabel(
+                        const _FieldLabel(
                           AppString.address,
                         ),
                         _FormField(
@@ -192,7 +192,7 @@ class _AddEditAddressScreenState
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  _FieldLabel(
+                                  const _FieldLabel(
                                     AppString.street,
                                   ),
                                   _FormField(
@@ -208,7 +208,7 @@ class _AddEditAddressScreenState
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  _FieldLabel(
+                                  const _FieldLabel(
                                     AppString.postCode,
                                   ),
                                   _FormField(
@@ -222,7 +222,7 @@ class _AddEditAddressScreenState
                         const SizedBox(
                           height: 18,
                         ),
-                        _FieldLabel(
+                        const _FieldLabel(
                           AppString.appartment,
                         ),
                         _FormField(
@@ -231,7 +231,7 @@ class _AddEditAddressScreenState
                         const SizedBox(
                           height: 18,
                         ),
-                        _FieldLabel(
+                        const _FieldLabel(
                           AppString.labelAs,
                         ),
                         Row(
@@ -308,9 +308,9 @@ class _AddEditAddressScreenState
                       ),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     AppString.saveLocation,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.w700,
                       letterSpacing: 0.5,
                     ),

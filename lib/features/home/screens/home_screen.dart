@@ -32,8 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             _buildTopBar(context),
             const SizedBox(height: 20),
-            Row(
-              children: const [
+            const Row(
+              children: [
                 Text(
                   'Hey Halal,',
                   style: TextStyle(fontSize: 20, color: AppColors.textPrimary),
@@ -93,10 +93,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         const SizedBox(width: 12),
-        Expanded(
+        const Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Text(
                 'DELIVER TO',
                 style: TextStyle(
@@ -151,8 +151,8 @@ class _HomeScreenState extends State<HomeScreen> {
           borderRadius: BorderRadius.circular(14),
           border: Border.all(color: AppColors.borderGray),
         ),
-        child: Row(
-          children: const [
+        child: const Row(
+          children: [
             AppSvgIcon(
               'assets/icons/search.svg',
               size: 20,
