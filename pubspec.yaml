@@ -1,3 +1,4 @@
+
 name: food_app_depi
 description: "A food delivery Flutter application."
 publish_to: 'none'
@@ -12,12 +13,12 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.8
-  flutter_svg: ^2.2.0
+  flutter_svg: ^2.3.0
+  iconsax_flutter: ^1.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^3.0.2
 
 flutter:
@@ -26,6 +27,7 @@ flutter:
   assets:
     - assets/icons/
     - assets/fonts/
+    - assets/icons/location.svg
 
   fonts:
     - family: GoogleSansFlex

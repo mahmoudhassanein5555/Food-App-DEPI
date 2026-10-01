@@ -1,4 +1,7 @@
+
 import 'package:flutter/material.dart';
+
+import 'core/app_colors.dart';
 import 'features/splash/splash_screen.dart';
 
 void main() {
@@ -15,9 +18,11 @@ class FoodDeliveryApp extends StatelessWidget {
       title: 'Food Delivery',
       theme: ThemeData(
         useMaterial3: true,
+        fontFamily: 'GoogleSansFlex',
         scaffoldBackgroundColor: const Color(0xFF121223),
-        fontFamily: 'Sen',
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFFF7622)),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.primaryOrange,
+        ),
       ),
       home: const SplashScreen(),
     );

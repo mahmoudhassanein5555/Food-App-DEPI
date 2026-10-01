@@ -1,14 +1,81 @@
+
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const background = Color(0xFF121223);
-  static const orange = Color(0xFFFF7622);
-  static const field = Color(0xFFF0F5FA);
-  static const text = Color(0xFF32343E);
-  static const muted = Color(0xFF646982);
-  static const placeholder = Color(0xFFA0A5BA);
-  static const white = Colors.white;
-  static const facebook = Color(0xFF395998);
-  static const twitter = Color(0xFF169CE8);
-  static const apple = Color(0xFF1B1F2F);
+  const AppColors._();
+
+  // Authentication / Main colors
+  static const Color background = Color(0xFF121223);
+  static const Color orange = Color(0xFFFF7622);
+  static const Color field = Color(0xFFF0F5FA);
+  static const Color text = Color(0xFF32343E);
+  static const Color muted = Color(0xFF646982);
+  static const Color placeholder = Color(0xFFA0A5BA);
+  static const Color white = Color(0xFFFFFFFF);
+
+  // Social colors
+  static const Color facebook = Color(0xFF395998);
+  static const Color twitter = Color(0xFF169CE8);
+  static const Color apple = Color(0xFF1B1F2F);
+
+  // General UI colors
+  static const Color offWhite = Color(0xFFF8F8F8);
+  static const Color card = Color(0xFFF5F5F5);
+
+  static const Color screenBackground = Color(0xFFF3F3F3);
+
+  // Orange palette
+  static const Color primaryOrange = Color(0xFFFF7A32);
+  static const Color primaryOrangeDark = Color(0xFFF36A1B);
+  static const Color accentOrange = Color(0xFFFFB57D);
+
+  // Dark / Navy palette
+  static const Color darkNavy = Color(0xFF1E2430);
+  static const Color navy = Color(0xFF2A3344);
+
+  // Text colors
+  static const Color textPrimary = Color(0xFF1E2430);
+  static const Color textSecondary = Color(0xFF6E7785);
+
+  // Gray palette
+  static const Color lightGray = Color(0xFFD9DDE5);
+  static const Color softGray = Color(0xFFCBD2D8);
+  static const Color mutedGray = Color(0xFF9DA5AE);
+  static const Color borderGray = Color(0xFFE5E7EB);
+
+  // Soft colors
+  static const Color softPink = Color(0xFFF8D9D1);
+  static const Color softPeach = Color(0xFFF4E2D7);
+  static const Color softBlue = Color(0xFFE4EDF9);
+  static const Color softLavender = Color(0xFFE9E5F8);
+
+  // Status colors
+  static const Color successGreen = Color(0xFF67C6A7);
+  static const Color errorRed = Color(0xFFE76B5C);
+
+  // Basic colors
+  static const Color black = Color(0xFF111111);
+  static const Color transparent = Color(0x00000000);
+
+  // Cart colors
+  static const Color cartImagePlaceholder = Color(0xFF292A3C);
+  static const Color cartQuantityButton = Color(0xFF343547);
+  static const Color cartHeaderButton = Color(0xFF2A2B3E);
+
+  // Delivery colors
+  static const Color deliveryAddressBackground = Color(0xFFF0F5FA);
+
+  // Payment colors
+  static const Color paymentCardRed = Color(0xFFD81135);
+  static const Color paymentCardHighlight = Color(0xFFFFB79B);
+  static const Color paymentCardChip = Color(0xFFFFD15C);
+
+  // Card brand colors
+  static const Color mastercardRed = Color(0xFFEB001B);
+  static const Color mastercardOrange = Color(0xFFF79E1B);
+  static const Color visaBlue = Color(0xFF1769AA);
+
+  // Order / artwork colors
+  static const Color successArtworkBackground = Color(0xFF9AAEBE);
+  static const Color orderImagePlaceholder = Color(0xFF9AAEBE);
 }
