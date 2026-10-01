@@ -26,17 +26,12 @@ class AuthShell extends StatelessWidget {
           aspectRatio: 375 / 812,
           child: Stack(
             children: [
-              // =========================
-              // الخلفية
-              // =========================
+              
               const AuthBackground(
                 showBack: false,
                 onBack: null,
               ),
 
-              // =========================
-              // زر الرجوع
-              // =========================
               if (showBack)
                 Positioned(
                   left: 24,
@@ -61,9 +56,6 @@ class AuthShell extends StatelessWidget {
                   ),
                 ),
 
-              // =========================
-              // الجزء الأبيض
-              // =========================
               Positioned(
                 left: 0,
                 right: 0,
@@ -78,10 +70,6 @@ class AuthShell extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // =========================
-              // العنوان والوصف
-              // =========================
               Positioned(
                 left: 0,
                 right: 0,
@@ -110,11 +98,7 @@ class AuthShell extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-
-              // =========================
-              // محتوى الصفحة
-              // =========================
+              ), 
               Positioned.fill(
                 child: child,
               ),

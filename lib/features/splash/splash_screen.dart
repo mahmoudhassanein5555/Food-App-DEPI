@@ -28,8 +28,6 @@ class _SplashScreenState extends State<SplashScreen>
       vsync: this,
       duration: const Duration(seconds: 2),
     );
-
-    // Food تطلع من تحت الشاشة
     _foodAnimation = Tween<Offset>(
       begin: const Offset(0, 20),
       end: Offset.zero,
@@ -40,7 +38,6 @@ class _SplashScreenState extends State<SplashScreen>
       ),
     );
 
-    // الجزء العلوي ينزل من فوق الشاشة
     _topLogoAnimation = Tween<Offset>(
       begin: const Offset(0, -30),
       end: Offset.zero,
@@ -50,11 +47,8 @@ class _SplashScreenState extends State<SplashScreen>
         curve: Curves.easeOutBack,
       ),
     );
-
-    // تشغيل الأنيميشن
     _controller.forward();
 
-    // الانتقال للـ Login بعد 3 ثواني
     Timer(const Duration(seconds: 3), () {
       if (!mounted) return;
 
@@ -82,9 +76,6 @@ class _SplashScreenState extends State<SplashScreen>
           aspectRatio: 375 / 812,
           child: Stack(
             children: [
-              // ==========================================
-              // الزخرفة الموجودة أعلى الشاشة
-              // ==========================================
               Positioned(
                 left: 0,
                 top: 0,
@@ -94,10 +85,6 @@ class _SplashScreenState extends State<SplashScreen>
                   height: 103,
                 ),
               ),
-
-              // ==========================================
-              // الزخرفة البرتقالي الموجودة أسفل الشاشة
-              // ==========================================
               Positioned(
                 right: 0,
                 bottom: 0,
@@ -108,9 +95,6 @@ class _SplashScreenState extends State<SplashScreen>
                 ),
               ),
 
-              // ==========================================
-              // اللوجو بالكامل
-              // ==========================================
               Positioned(
                 left: 0,
                 right: 0,
@@ -121,9 +105,6 @@ class _SplashScreenState extends State<SplashScreen>
                     height: 60,
                     child: Stack(
                       children: [
-                        // ----------------------------------
-                        // كلمة Food
-                        // ----------------------------------
                         Positioned(
                           left: 0,
                           top: 16,
@@ -137,9 +118,6 @@ class _SplashScreenState extends State<SplashScreen>
                           ),
                         ),
 
-                        // ----------------------------------
-                        // الجزء البرتقالي فوق Food
-                        // ----------------------------------
                         Positioned(
                           left: 39,
                           top: 0,
