@@ -76,17 +76,14 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       maxLength: 1,
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.number,
-                      textInputAction: i == 3
-                          ? TextInputAction.done
-                          : TextInputAction.next,
+                      textInputAction: i == 3 ? TextInputAction.done : TextInputAction.next,
                       style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,
                         color: Color(0xFF2D3142),
                       ),
                       onTap: () {
-                        controllers[i].selection =
-                            TextSelection.fromPosition(
+                        controllers[i].selection = TextSelection.fromPosition(
                           TextPosition(
                             offset: controllers[i].text.length,
                           ),
@@ -102,18 +99,15 @@ class _VerificationScreenState extends State<VerificationScreen> {
                         fillColor: const Color(0xFFF0F5FA),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide:
-                              const BorderSide(color: Colors.white),
+                          borderSide: const BorderSide(color: Colors.white),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide:
-                              const BorderSide(color: Colors.white),
+                          borderSide: const BorderSide(color: Colors.white),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
-                          borderSide:
-                              const BorderSide(color: Colors.white),
+                          borderSide: const BorderSide(color: Colors.white),
                         ),
                       ),
                     ),
@@ -124,8 +118,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
               AuthButton(
                 label: 'VERIFY',
                 onPressed: () {
-                  final code =
-                      controllers.map((c) => c.text).join();
+                  final code = controllers.map((c) => c.text).join();
 
                   debugPrint('Verification code: $code');
                   Navigator.pop(context);

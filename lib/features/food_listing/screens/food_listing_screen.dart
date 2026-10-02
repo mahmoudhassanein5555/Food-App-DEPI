@@ -53,7 +53,7 @@ class _FoodListingScreenState extends State<FoodListingScreen> {
   Widget _buildTopBar(BuildContext context) {
     return Row(
       children: [
-        CircleIconButton(icon: 'assets/icons/arrow_left.svg', iconColor: AppColors.black,backgroundColor: AppColors.borderGray, onTap: () => Navigator.pop(context)),
+        CircleIconButton(icon: 'assets/icons/arrow_left.svg', iconColor: AppColors.black, backgroundColor: AppColors.borderGray, onTap: () => Navigator.pop(context)),
         const SizedBox(width: 12),
         Expanded(
           child: Container(

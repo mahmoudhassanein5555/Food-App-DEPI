@@ -61,9 +61,7 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
             ),
             const SizedBox(height: 10),
-            ...mockRestaurants
-                .take(3)
-                .map((r) => _SuggestedRestaurantTile(restaurant: r)),
+            ...mockRestaurants.take(3).map((r) => _SuggestedRestaurantTile(restaurant: r)),
             const SizedBox(height: 22),
             const Text(
               'Popular Fast Food',
@@ -135,13 +133,13 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
             ),
           ),
-       CircleIconButton(
-  icon: 'assets/icons/wrong.svg',
-  backgroundColor: AppColors.borderGray, 
-  iconColor: AppColors.white,
-  size: 20,       
-  onTap: () => setState(() => _controller.clear()),
-)
+          CircleIconButton(
+            icon: 'assets/icons/wrong.svg',
+            backgroundColor: AppColors.borderGray,
+            iconColor: AppColors.white,
+            size: 20,
+            onTap: () => setState(() => _controller.clear()),
+          )
         ],
       ),
     );

@@ -57,9 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(height: 24),
             SectionHeader(title: 'Open Restaurants', onSeeAll: () {}),
             const SizedBox(height: 12),
-            ...mockRestaurants
-                .take(3)
-                .map(
+            ...mockRestaurants.take(3).map(
                   (r) => Padding(
                     padding: const EdgeInsets.only(bottom: 18),
                     child: RestaurantCard(
@@ -189,12 +187,11 @@ class _HomeScreenState extends State<HomeScreen> {
           return GestureDetector(
             onTap: category.name == 'Burger'
                 ? () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) =>
-                          FoodListingScreen(categoryName: category.name),
-                    ),
-                  )
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => FoodListingScreen(categoryName: category.name),
+                      ),
+                    )
                 : null,
             child: Column(
               children: [
