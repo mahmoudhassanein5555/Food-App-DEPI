@@ -9,6 +9,7 @@ class OrderItem {
     required this.orderNumber,
     required this.price,
     required this.itemCount,
+    required this.imageUrl,
     this.date,
     this.status,
   });
@@ -18,6 +19,7 @@ class OrderItem {
   final String orderNumber;
   final double price;
   final int itemCount;
+  final String imageUrl;
   final String? date;
   final OrderStatus? status;
 

@@ -34,7 +34,7 @@ class FoodItemCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               child: AspectRatio(
                 aspectRatio: 1.3,
-                child: Container(color: AppColors.orderImagePlaceholder),
+                child: Image.asset(item.imageUrl, fit: BoxFit.cover),
               ),
             ),
             const SizedBox(height: 8),
@@ -45,7 +45,7 @@ class FoodItemCard extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
-                color: AppColors.textPrimary,
+                color: AppColors.textDarkest,
               ),
             ),
             Text(
@@ -63,7 +63,7 @@ class FoodItemCard extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
+                    color: AppColors.textDarkest,
                   ),
                 ),
                 GestureDetector(

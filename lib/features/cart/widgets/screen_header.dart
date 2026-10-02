@@ -17,7 +17,7 @@ class ScreenHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final foreground = dark ? AppColors.white : AppColors.textPrimary;
+    final foreground = dark ? AppColors.white : AppColors.textDarkest;
     return SizedBox(
       height: 64,
       child: Padding(

@@ -12,13 +12,24 @@ const List<String> categoryNames = [
   'Chicken',
 ];
 
-final List<FoodCategory> mockCategories = List.generate(
-  categoryNames.length,
-  (i) => FoodCategory(
-    name: categoryNames[i],
-    imageUrl: placeholderImage(100 + i),
+final List<FoodCategory> mockCategories = [
+  FoodCategory(
+    name: 'Pizza',
+    imageUrl: 'assets/images/pizza_category.jpg',
   ),
-);
+  FoodCategory(
+    name: 'Burger',
+    imageUrl: 'assets/images/burger_category.jpg',
+  ),
+  FoodCategory(
+    name: 'Sandwich',
+    imageUrl: 'assets/images/pizza_category.jpg',
+  ),
+  FoodCategory(
+    name: 'Chicken',
+    imageUrl: 'assets/images/burger_category.jpg',
+  ),
+];
 
 final List<Restaurant> mockRestaurants = [
   Restaurant(
@@ -28,7 +39,7 @@ final List<Restaurant> mockRestaurants = [
     rating: 4.7,
     freeDelivery: true,
     timeMinutes: 20,
-    imageUrl: placeholderImage(1),
+    imageUrl: 'assets/images/restaurant_1.jpg',
   ),
   Restaurant(
     id: 'r2',
@@ -37,7 +48,7 @@ final List<Restaurant> mockRestaurants = [
     rating: 4.7,
     freeDelivery: true,
     timeMinutes: 20,
-    imageUrl: placeholderImage(2),
+    imageUrl: 'assets/images/restaurant_2.jpg',
   ),
   Restaurant(
     id: 'r3',
@@ -46,7 +57,7 @@ final List<Restaurant> mockRestaurants = [
     rating: 4.7,
     freeDelivery: true,
     timeMinutes: 20,
-    imageUrl: placeholderImage(3),
+    imageUrl: 'assets/images/restaurant_1.jpg',
     description:
         'Maecenas dolor eget risus varius blandit sit amet non magna. '
         'Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
@@ -58,7 +69,7 @@ final List<Restaurant> mockRestaurants = [
     rating: 4.7,
     freeDelivery: true,
     timeMinutes: 15,
-    imageUrl: placeholderImage(4),
+    imageUrl: 'assets/images/restaurant_2.jpg',
   ),
   Restaurant(
     id: 'r5',
@@ -67,7 +78,7 @@ final List<Restaurant> mockRestaurants = [
     rating: 4.3,
     freeDelivery: true,
     timeMinutes: 25,
-    imageUrl: placeholderImage(5),
+    imageUrl: 'assets/images/restaurant_1.jpg',
   ),
   Restaurant(
     id: 'r6',
@@ -76,7 +87,7 @@ final List<Restaurant> mockRestaurants = [
     rating: 4.0,
     freeDelivery: false,
     timeMinutes: 10,
-    imageUrl: placeholderImage(6),
+    imageUrl: 'assets/images/restaurant_2.jpg',
   ),
 ];
 
@@ -86,7 +97,7 @@ final List<FoodItem> mockBurgers = [
     name: 'Burger Bistro',
     restaurantName: 'Rose Garden',
     price: 40,
-    imageUrl: placeholderImage(11),
+    imageUrl: 'assets/images/burger_item.jpg',
     description:
         'Maecenas dolor eget risus varius blandit sit amet non magna. '
         'Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
@@ -96,21 +107,21 @@ final List<FoodItem> mockBurgers = [
     name: "Smokin' Burger",
     restaurantName: 'Cafenio Restaurant',
     price: 60,
-    imageUrl: placeholderImage(12),
+    imageUrl: 'assets/images/burger_item.jpg',
   ),
   FoodItem(
     id: 'b3',
     name: 'Buffalo Burgers',
     restaurantName: 'Kafji Firm Kitchen',
     price: 75,
-    imageUrl: placeholderImage(13),
+    imageUrl: 'assets/images/burger_item.jpg',
   ),
   FoodItem(
     id: 'b4',
     name: 'Bullseye Burgers',
     restaurantName: 'Kobab Restaurant',
     price: 94,
-    imageUrl: placeholderImage(14),
+    imageUrl: 'assets/images/burger_item.jpg',
   ),
 ];
 
@@ -120,14 +131,14 @@ final List<FoodItem> mockSpicyRestaurantBurgers = [
     name: 'Burger Ferguson',
     restaurantName: 'Spicy Restaurant',
     price: 40,
-    imageUrl: placeholderImage(21),
+    imageUrl: 'assets/images/burger_item.jpg',
   ),
   FoodItem(
     id: 's2',
     name: "Rockin' Burgers",
     restaurantName: 'Cafecofching',
     price: 40,
-    imageUrl: placeholderImage(22),
+    imageUrl: 'assets/images/burger_item.jpg',
   ),
 ];
 

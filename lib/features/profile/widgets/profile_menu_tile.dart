@@ -41,14 +41,14 @@ class ProfileMenuTile
                 label,
                 style: const TextStyle(
                   fontSize: 15,
-                  color: AppColors.textDark,
+                  color: AppColors.text,
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ),
             const Icon(
               Icons.chevron_right,
-              color: AppColors.placeholderGrey,
+              color: AppColors.placeholder,
             ),
           ],
         ),

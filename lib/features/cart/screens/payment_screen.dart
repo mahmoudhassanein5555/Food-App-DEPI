@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_depi/core/app_colors.dart';
 import 'package:food_app_depi/core/app_string.dart';
-import 'package:food_app_depi/features/cart/models/payment_method.dart';
+import 'package:food_app_depi/features/cart/data/models/payment_method.dart';
 import 'package:food_app_depi/features/cart/screens/payment_success_screen.dart';
 import 'package:food_app_depi/features/cart/widgets/add_payment_method_button.dart';
 import 'package:food_app_depi/features/cart/widgets/checkout_footer.dart';

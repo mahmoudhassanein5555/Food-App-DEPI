@@ -11,6 +11,7 @@ class AuthTextField extends StatelessWidget {
     this.controller,
     this.keyboardType,
     this.autofocus = false,
+    this.validator,
   });
 
   final String label;
@@ -19,6 +20,7 @@ class AuthTextField extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final bool autofocus;
+  final String? Function(String?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +36,12 @@ class AuthTextField extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 8),
-        SizedBox(
-          height: 62,
-          child: TextField(
-            controller: controller,
-            obscureText: obscure,
-            keyboardType: keyboardType,
-            autofocus: autofocus,
+        TextFormField(
+          controller: controller,
+          obscureText: obscure,
+          keyboardType: keyboardType,
+          autofocus: autofocus,
+          validator: validator,
             style: const TextStyle(
               fontSize: 14,
               color: AppColors.text,
@@ -67,7 +68,6 @@ class AuthTextField extends StatelessWidget {
                       color: AppColors.placeholder,
                     )
                   : null,
-            ),
           ),
         ),
       ],

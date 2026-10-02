@@ -17,6 +17,7 @@ class OrdersScreen extends StatelessWidget {
       orderNumber: AppString.pizzaHutOrderNumber,
       price: 35.25,
       itemCount: 3,
+      imageUrl: 'assets/images/pizza_category.jpg',
     ),
     OrderItem(
       category: AppString.drinkCategory,
@@ -24,6 +25,7 @@ class OrdersScreen extends StatelessWidget {
       orderNumber: AppString.mcDonaldsOrderNumber,
       price: 40.15,
       itemCount: 2,
+      imageUrl: 'assets/images/burger_item.jpg',
     ),
     OrderItem(
       category: AppString.drinkCategory,
@@ -31,6 +33,7 @@ class OrdersScreen extends StatelessWidget {
       orderNumber: AppString.starbucksOrderNumber,
       price: 10.20,
       itemCount: 1,
+      imageUrl: 'assets/images/burger_category.jpg',
     ),
   ];
 
@@ -41,6 +44,7 @@ class OrdersScreen extends StatelessWidget {
       orderNumber: AppString.pizzaHutOrderNumber,
       price: 35.25,
       itemCount: 3,
+      imageUrl: 'assets/images/pizza_category.jpg',
       date: AppString.orderDateJan29,
       status: OrderStatus.completed,
     ),
@@ -50,6 +54,7 @@ class OrdersScreen extends StatelessWidget {
       orderNumber: AppString.mcDonaldsOrderNumber,
       price: 40.15,
       itemCount: 2,
+      imageUrl: 'assets/images/burger_item.jpg',
       date: AppString.orderDateJan30,
       status: OrderStatus.completed,
     ),
@@ -59,6 +64,7 @@ class OrdersScreen extends StatelessWidget {
       orderNumber: AppString.starbucksOrderNumber,
       price: 10.20,
       itemCount: 1,
+      imageUrl: 'assets/images/burger_category.jpg',
       date: AppString.orderDateJan30,
       status: OrderStatus.canceled,
     ),

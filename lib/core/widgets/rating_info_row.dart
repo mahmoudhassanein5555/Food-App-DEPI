@@ -22,20 +22,20 @@ class RatingInfoRow extends StatelessWidget {
     final textStyle = TextStyle(
       fontSize: fontSize,
       fontWeight: FontWeight.w600,
-      color: AppColors.textPrimary,
+      color: AppColors.textDarkest,
     );
 
     return Row(
       children: [
-        AppSvgIcon('assets/icons/star.svg', size: iconSize, color: AppColors.primaryOrange),
+        AppSvgIcon('assets/icons/star.svg', size: iconSize, color: AppColors.orange),
         const SizedBox(width: 4),
         Text('$rating', style: textStyle),
         const SizedBox(width: 14),
-        AppSvgIcon('assets/icons/truck.svg', size: iconSize, color: AppColors.primaryOrange),
+        AppSvgIcon('assets/icons/truck.svg', size: iconSize, color: AppColors.orange),
         const SizedBox(width: 4),
         Text(freeDelivery ? 'Free' : 'Paid', style: textStyle),
         const SizedBox(width: 14),
-        AppSvgIcon('assets/icons/clock.svg', size: iconSize, color: AppColors.primaryOrange),
+        AppSvgIcon('assets/icons/clock.svg', size: iconSize, color: AppColors.orange),
         const SizedBox(width: 4),
         Text('$timeMinutes min', style: textStyle),
       ],

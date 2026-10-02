@@ -113,7 +113,7 @@ class _EditProfileScreenState
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w700,
-                            color: AppColors.textDark,
+                            color: AppColors.text,
                           ),
                         ),
                       ],
@@ -135,7 +135,7 @@ class _EditProfileScreenState
                               width: 30,
                               height: 30,
                               decoration: const BoxDecoration(
-                                color: AppColors.primaryOrange,
+                                color: AppColors.orange,
                                 shape: BoxShape.circle,
                               ),
                               alignment: Alignment.center,
@@ -212,7 +212,7 @@ class _EditProfileScreenState
                 child: ElevatedButton(
                   onPressed: _save,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primaryOrange,
+                    backgroundColor: AppColors.orange,
                     foregroundColor: AppColors.white,
                     padding: const EdgeInsets.symmetric(
                       vertical: 16,
@@ -285,7 +285,7 @@ class _FormField
       keyboardType: keyboardType,
       maxLines: maxLines,
       style: const TextStyle(
-        color: AppColors.textDark,
+        color: AppColors.text,
         fontSize: 14,
       ),
       decoration: InputDecoration(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_depi/core/app_colors.dart';
+import 'package:food_app_depi/core/app_string.dart';
 
 enum AddressLabel {
   home,
@@ -13,7 +14,7 @@ extension AddressLabelX
   String get text {
     switch (this) {
       case AddressLabel.home:
-        return 'Home';
+        return AppString.home;
       case AddressLabel.work:
         return 'Work';
       case AddressLabel.other:
@@ -39,7 +40,7 @@ extension AddressLabelX
       case AddressLabel.work:
         return AppColors.purple;
       case AddressLabel.other:
-        return AppColors.primaryOrange;
+        return AppColors.orange;
     }
   }
 }

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_depi/core/app_colors.dart';
 import 'package:food_app_depi/core/app_string.dart';
-import 'package:food_app_depi/features/cart/models/cart_product.dart';
+import 'package:food_app_depi/features/cart/data/cart_data_class.dart';
+import 'package:food_app_depi/features/cart/data/models/cart_product.dart';
 import 'package:food_app_depi/features/cart/screens/payment_screen.dart';
 import 'package:food_app_depi/features/cart/widgets/cart_details_panel.dart';
 import 'package:food_app_depi/features/cart/widgets/cart_header.dart';
 import 'package:food_app_depi/features/cart/widgets/cart_item_tile.dart';
+import 'package:food_app_depi/core/mock_data.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -15,20 +17,17 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
-  final List<CartProduct> _products = [
-    CartProduct(name: AppString.pizzaCalzoneEuropean, price: 64),
-    CartProduct(name: AppString.pizzaCalzoneEuropean, price: 32),
-  ];
+  final List<CartProduct> _products = CartDataClass.cartItems;
 
   int get _total => _products.fold(
-    0,
-    (sum, product) => sum + product.price * product.quantity,
-  );
+        0,
+        (sum, product) => sum + product.price * product.quantity,
+      );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.darkNavy,
+      backgroundColor: AppColors.textDarkest,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -68,10 +67,10 @@ class _CartScreenState extends State<CartScreen> {
                 onPlaceOrder: _products.isEmpty
                     ? null
                     : () => Navigator.of(context).push(
-                        MaterialPageRoute<void>(
-                          builder: (context) => PaymentScreen(total: _total),
+                          MaterialPageRoute<void>(
+                            builder: (context) => PaymentScreen(total: _total),
+                          ),
                         ),
-                      ),
               ),
             ),
           ],

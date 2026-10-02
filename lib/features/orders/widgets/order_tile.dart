@@ -15,7 +15,7 @@ class OrderTile extends StatelessWidget {
       Text(
         '${AppString.currencySymbol}${order.price.toStringAsFixed(2)}',
         style: const TextStyle(
-          color: AppColors.textPrimary,
+          color: AppColors.textDarkest,
           fontSize: 12,
           fontWeight: FontWeight.w600,
         ),
@@ -49,7 +49,7 @@ class OrderTile extends StatelessWidget {
       children: [
         Row(
           children: [
-            const OrderThumbnail(),
+            OrderThumbnail(imageUrl: order.imageUrl),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -63,7 +63,7 @@ class OrderTile extends StatelessWidget {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
-                            color: AppColors.textPrimary,
+                            color: AppColors.textDarkest,
                             fontSize: 13,
                             fontWeight: FontWeight.w600,
                           ),
@@ -98,16 +98,19 @@ class OrderTile extends StatelessWidget {
 }
 
 class OrderThumbnail extends StatelessWidget {
-  const OrderThumbnail({super.key});
+  const OrderThumbnail({super.key, required this.imageUrl});
+  
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 52,
-      height: 52,
-      decoration: BoxDecoration(
-        color: AppColors.orderImagePlaceholder,
-        borderRadius: BorderRadius.circular(7),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(7),
+      child: Image.asset(
+        imageUrl,
+        width: 52,
+        height: 52,
+        fit: BoxFit.cover,
       ),
     );
   }

@@ -10,7 +10,7 @@ class CardIllustration extends StatelessWidget {
       width: 118,
       height: 74,
       decoration: BoxDecoration(
-        color: AppColors.primaryOrange,
+        color: AppColors.orange,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Stack(

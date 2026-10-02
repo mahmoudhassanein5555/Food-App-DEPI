@@ -21,7 +21,7 @@ class OrderSection extends StatelessWidget {
               Text(
                 order.category,
                 style: const TextStyle(
-                  color: AppColors.textPrimary,
+                  color: AppColors.textDarkest,
                   fontSize: 13,
                 ),
               ),

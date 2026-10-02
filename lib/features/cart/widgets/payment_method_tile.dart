@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_depi/core/app_colors.dart';
-import 'package:food_app_depi/features/cart/models/payment_method.dart';
+import 'package:food_app_depi/features/cart/data/models/payment_method.dart';
 import 'package:food_app_depi/features/cart/widgets/payment_method_mark.dart';
 
 class PaymentMethodTile extends StatelessWidget {
@@ -34,7 +34,7 @@ class PaymentMethodTile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(9),
                     border: Border.all(
                       color: selected
-                          ? AppColors.primaryOrange
+                          ? AppColors.orange
                           : AppColors.transparent,
                       width: 1.4,
                     ),
@@ -47,7 +47,7 @@ class PaymentMethodTile extends StatelessWidget {
                     right: -5,
                     child: CircleAvatar(
                       radius: 8,
-                      backgroundColor: AppColors.primaryOrange,
+                      backgroundColor: AppColors.orange,
                       child: Icon(
                         Icons.check,
                         size: 11,
@@ -63,7 +63,7 @@ class PaymentMethodTile extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: const TextStyle(
-                color: AppColors.textSecondary,
+                color: AppColors.muted,
                 fontSize: 10,
               ),
             ),

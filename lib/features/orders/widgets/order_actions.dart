@@ -22,7 +22,7 @@ class OrderActions extends StatelessWidget {
           child: FilledButton(
             onPressed: () {},
             style: FilledButton.styleFrom(
-              backgroundColor: AppColors.primaryOrange,
+              backgroundColor: AppColors.orange,
               foregroundColor: AppColors.white,
               minimumSize: const Size.fromHeight(36),
               shape: RoundedRectangleBorder(
@@ -39,7 +39,7 @@ class OrderActions extends StatelessWidget {
             onPressed: () {},
             style: OutlinedButton.styleFrom(
               foregroundColor: AppColors.primaryOrangeDark,
-              side: const BorderSide(color: AppColors.primaryOrange),
+              side: const BorderSide(color: AppColors.orange),
               minimumSize: const Size.fromHeight(36),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(7),

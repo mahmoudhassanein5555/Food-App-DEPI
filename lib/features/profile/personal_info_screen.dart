@@ -90,7 +90,7 @@ class _PersonalInfoScreenState
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
-                      color: AppColors.textDark,
+                      color: AppColors.text,
                     ),
                   ),
                   TextButton(
@@ -98,7 +98,7 @@ class _PersonalInfoScreenState
                     child: const Text(
                       AppString.edit,
                       style: TextStyle(
-                        color: AppColors.primaryOrange,
+                        color: AppColors.orange,
                         fontWeight: FontWeight.w700,
                         decoration: TextDecoration.underline,
                       ),
@@ -126,7 +126,7 @@ class _PersonalInfoScreenState
                         style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
-                          color: AppColors.textDark,
+                          color: AppColors.text,
                         ),
                       ),
                       const SizedBox(
@@ -249,7 +249,7 @@ class _InfoRow
                 value,
                 style: const TextStyle(
                   fontSize: 15,
-                  color: AppColors.textDark,
+                  color: AppColors.text,
                   fontWeight: FontWeight.w500,
                 ),
               ),

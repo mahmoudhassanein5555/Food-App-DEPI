@@ -27,12 +27,12 @@ class SocialButtons extends StatelessWidget {
 
         const SizedBox(width: 31),
 
-        _SocialButton(
-          image: 'assets/icons/Group 8187.svg',
-          onTap: () {
-            debugPrint('Apple');
-          },
-        ),
+        // _SocialButton(
+        //   image: 'assets/icons/Group 8187.svg',
+        //   onTap: () {
+        //     debugPrint('Apple');
+        //   },
+        // ),
       ],
     );
   }

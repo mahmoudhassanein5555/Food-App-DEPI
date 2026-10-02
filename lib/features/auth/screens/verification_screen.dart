@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'auth_shell.dart';
-import 'widgets/auth_button.dart';
+import '../widgets/auth_button.dart';
+import 'login_screen.dart';
+import 'package:food_app_depi/core/app_string.dart';
+import 'package:food_app_depi/core/app_colors.dart';
 
 class VerificationScreen extends StatefulWidget {
   const VerificationScreen({super.key});
@@ -44,8 +47,8 @@ class _VerificationScreenState extends State<VerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return AuthShell(
-      title: 'Verification',
-      subtitle: 'We have sent a code to your email',
+      title: AppString.verification,
+      subtitle: AppString.verificationSubtitle,
       showBack: true,
       onBack: () => Navigator.pop(context),
       child: Positioned.fill(
@@ -54,7 +57,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
           child: Column(
             children: [
               const Text(
-                'example@gmail.com',
+                AppString.emailHint,
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
@@ -96,7 +99,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       decoration: InputDecoration(
                         counterText: '',
                         filled: true,
-                        fillColor: const Color(0xFFF0F5FA),
+                        fillColor: AppColors.field,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: const BorderSide(color: Colors.white),
@@ -116,12 +119,16 @@ class _VerificationScreenState extends State<VerificationScreen> {
               ),
               const SizedBox(height: 45),
               AuthButton(
-                label: 'VERIFY',
+                label: AppString.verify,
                 onPressed: () {
                   final code = controllers.map((c) => c.text).join();
 
                   debugPrint('Verification code: $code');
-                  Navigator.pop(context);
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (_) => const LoginScreen()),
+                    (route) => false,
+                  );
                 },
               ),
             ],

@@ -34,12 +34,12 @@ class DeliveryAddressPanel extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.all(14),
           decoration: BoxDecoration(
-            color: AppColors.deliveryAddressBackground,
+            color: AppColors.field,
             borderRadius: BorderRadius.circular(9),
           ),
           child: const Text(
             AppString.deliveryAddress,
-            style: TextStyle(color: AppColors.textSecondary, fontSize: 13),
+            style: TextStyle(color: AppColors.muted, fontSize: 13),
           ),
         ),
       ],

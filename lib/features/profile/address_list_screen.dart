@@ -105,7 +105,7 @@ class _AddressListScreenState extends State<AddressListScreen> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
-                      color: AppColors.textDark,
+                      color: AppColors.text,
                     ),
                   ),
                 ],
@@ -145,7 +145,7 @@ class _AddressListScreenState extends State<AddressListScreen> {
                 child: ElevatedButton(
                   onPressed: () => _openAddOrEdit(),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primaryOrange,
+                    backgroundColor: AppColors.orange,
                     foregroundColor: AppColors.white,
                     padding: const EdgeInsets.symmetric(
                       vertical: 16,
@@ -195,7 +195,7 @@ Widget _labelIcon(
     case AddressLabel.other:
       return const Icon(
         Icons.location_on_outlined,
-        color: AppColors.primaryOrange,
+        color: AppColors.orange,
         size: 20,
       );
   }
@@ -260,7 +260,7 @@ class _AddressCard extends StatelessWidget {
                   address.fullAddress,
                   style: const TextStyle(
                     fontSize: 14,
-                    color: AppColors.textDark,
+                    color: AppColors.text,
                     fontWeight: FontWeight.w500,
                   ),
                 ),

@@ -105,7 +105,7 @@ class _AddEditAddressScreenState
                     child: Stack(
                       children: [
                         Container(
-                          color: AppColors.placeholderGrey,
+                          color: AppColors.placeholder,
                         ),
                         Positioned(
                           top: 48,
@@ -152,7 +152,7 @@ class _AddEditAddressScreenState
                                 width: 22,
                                 height: 22,
                                 decoration: const BoxDecoration(
-                                  color: AppColors.primaryOrange,
+                                  color: AppColors.orange,
                                   shape: BoxShape.circle,
                                 ),
                               ),
@@ -258,12 +258,12 @@ class _AddEditAddressScreenState
                                         () => _selectedLabel = label,
                                       );
                                     },
-                                selectedColor: AppColors.primaryOrange,
+                                selectedColor: AppColors.orange,
                                 backgroundColor: AppColors.card,
                                 labelStyle: TextStyle(
                                   color: selected
                                       ? AppColors.white
-                                      : AppColors.textDark,
+                                      : AppColors.text,
                                   fontWeight: FontWeight.w600,
                                 ),
                                 shape: RoundedRectangleBorder(
@@ -297,7 +297,7 @@ class _AddEditAddressScreenState
                 child: ElevatedButton(
                   onPressed: _save,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primaryOrange,
+                    backgroundColor: AppColors.orange,
                     foregroundColor: AppColors.white,
                     padding: const EdgeInsets.symmetric(
                       vertical: 16,
@@ -367,7 +367,7 @@ class _FormField
     return TextField(
       controller: controller,
       style: const TextStyle(
-        color: AppColors.textDark,
+        color: AppColors.text,
         fontSize: 14,
       ),
       decoration: InputDecoration(

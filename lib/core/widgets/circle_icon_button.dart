@@ -17,7 +17,7 @@ class CircleIconButton extends StatelessWidget {
     this.onTap,
     this.background,
     this.backgroundColor = AppColors.card,
-    this.iconColor = AppColors.textDark,
+    this.iconColor = AppColors.text,
     this.size = 40,
     this.badgeCount,
   });
@@ -31,7 +31,7 @@ class CircleIconButton extends StatelessWidget {
       icon: Icons.chevron_left,
       background: background,
       backgroundColor: background ?? AppColors.card,
-      iconColor: iconColor ?? AppColors.textDark,
+      iconColor: iconColor ?? AppColors.text,
       onTap: () => Navigator.of(context).maybePop(),
     );
   }
@@ -80,7 +80,7 @@ class CircleIconButton extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(4),
               decoration: const BoxDecoration(
-                color: AppColors.primaryOrange,
+                color: AppColors.orange,
                 shape: BoxShape.circle,
               ),
               constraints: const BoxConstraints(minWidth: 20, minHeight: 20),

@@ -20,7 +20,7 @@ class FoodDeliveryApp extends StatelessWidget {
         fontFamily: 'GoogleSansFlex',
         scaffoldBackgroundColor: AppColors.white,
         colorScheme: ColorScheme.fromSeed(
-          seedColor: AppColors.primaryOrange,
+          seedColor: AppColors.orange,
         ),
       ),
       home: const SplashScreen(),

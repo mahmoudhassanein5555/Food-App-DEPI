@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/auth_background.dart';
+import '../widgets/auth_background.dart';
+import 'package:food_app_depi/core/app_colors.dart';
 
 class AuthShell extends StatelessWidget {
   const AuthShell({
@@ -48,7 +49,7 @@ class AuthShell extends StatelessWidget {
                       child: const Center(
                         child: Icon(
                           Icons.arrow_back_ios_new,
-                          color: Color(0xFF181C2E),
+                          color: AppColors.textDarkest,
                           size: 16,
                         ),
                       ),

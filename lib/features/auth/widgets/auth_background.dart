@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app_depi/core/app_colors.dart';
 
 class AuthBackground extends StatelessWidget {
   const AuthBackground({
@@ -15,17 +16,15 @@ class AuthBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const ColoredBox(
-          color: Color(0xFF121223),
+        Container(
+          color: AppColors.background,
         ),
-
         Align(
           alignment: Alignment.topLeft,
           child: SvgPicture.asset(
             'assets/icons/top_decoration.svg',
           ),
         ),
-
         Align(
           alignment: Alignment.topRight,
           child: SvgPicture.asset(

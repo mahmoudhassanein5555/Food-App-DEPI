@@ -19,7 +19,7 @@ class OrangeActionButton extends StatelessWidget {
       child: FilledButton(
         onPressed: onPressed,
         style: FilledButton.styleFrom(
-          backgroundColor: AppColors.primaryOrange,
+          backgroundColor: AppColors.orange,
           foregroundColor: AppColors.white,
           disabledBackgroundColor: AppColors.lightGray,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),

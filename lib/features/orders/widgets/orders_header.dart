@@ -17,7 +17,7 @@ class OrdersHeader extends StatelessWidget {
               onPressed: () => Navigator.of(context).maybePop(),
               style: IconButton.styleFrom(
                 backgroundColor: AppColors.card,
-                foregroundColor: AppColors.textPrimary,
+                foregroundColor: AppColors.textDarkest,
               ),
               icon: const Icon(Icons.chevron_left),
             ),
@@ -25,7 +25,7 @@ class OrdersHeader extends StatelessWidget {
             const Text(
               AppString.ordersTitle,
               style: TextStyle(
-                color: AppColors.textPrimary,
+                color: AppColors.textDarkest,
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),

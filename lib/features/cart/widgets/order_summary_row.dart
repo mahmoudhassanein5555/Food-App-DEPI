@@ -19,7 +19,7 @@ class OrderSummaryRow extends StatelessWidget {
         Text(
           '${AppString.currencySymbol}$total',
           style: const TextStyle(
-            color: AppColors.textPrimary,
+            color: AppColors.textDarkest,
             fontSize: 20,
             fontWeight: FontWeight.w500,
           ),
@@ -33,7 +33,7 @@ class OrderSummaryRow extends StatelessWidget {
           child: const Row(
             children: [
               Text(AppString.breakdown),
-              Icon(Icons.chevron_right, size: 18, color: AppColors.textPrimary),
+              Icon(Icons.chevron_right, size: 18, color: AppColors.textDarkest),
             ],
           ),
         ),

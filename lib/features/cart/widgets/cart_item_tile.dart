@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_depi/core/app_colors.dart';
 import 'package:food_app_depi/core/app_string.dart';
-import 'package:food_app_depi/features/cart/models/cart_product.dart';
+import 'package:food_app_depi/features/cart/data/models/cart_product.dart';
 import 'package:food_app_depi/features/cart/widgets/quantity_button.dart';
 
 class CartItemTile extends StatelessWidget {
@@ -22,15 +22,12 @@ class CartItemTile extends StatelessWidget {
       height: 100,
       child: Row(
         children: [
-          Container(
-            width: 90,
-            decoration: BoxDecoration(
-              color: AppColors.cartImagePlaceholder,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: const Icon(
-              Icons.local_pizza_outlined,
-              color: AppColors.accentOrange,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Container(
+              width: 90,
+              height: 90,
+              child: Image.asset(product.imageUrl, fit: BoxFit.cover),
             ),
           ),
           const SizedBox(width: 14),

@@ -18,7 +18,7 @@ class SectionHeader extends StatelessWidget {
           style: const TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.bold,
-            color: AppColors.textPrimary,
+            color: AppColors.textDarkest,
           ),
         ),
         if (onSeeAll != null)
@@ -30,11 +30,11 @@ class SectionHeader extends StatelessWidget {
                   'See All',
                   style: TextStyle(
                     fontSize: 13,
-                    color: AppColors.textSecondary,
+                    color: AppColors.muted,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                AppSvgIcon('assets/icons/chevron_right.svg', size: 16, color: AppColors.textSecondary),
+                AppSvgIcon('assets/icons/chevron_right.svg', size: 16, color: AppColors.muted),
               ],
             ),
           ),

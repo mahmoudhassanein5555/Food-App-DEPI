@@ -18,7 +18,7 @@ class SuccessMessage extends StatelessWidget {
         const Text(
           AppString.congratulations,
           style: TextStyle(
-            color: AppColors.textPrimary,
+            color: AppColors.textDarkest,
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),

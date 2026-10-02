@@ -8,7 +8,7 @@ class OrdersTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const TabBar(
-      indicatorColor: AppColors.primaryOrange,
+      indicatorColor: AppColors.orange,
       indicatorWeight: 2,
       dividerColor: AppColors.borderGray,
       labelColor: AppColors.primaryOrangeDark,

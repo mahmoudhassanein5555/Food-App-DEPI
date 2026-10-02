@@ -5,7 +5,9 @@ import 'package:food_app_depi/core/app_routes.dart';
 import 'package:food_app_depi/core/app_string.dart';
 import 'package:food_app_depi/core/widgets/circle_icon_button.dart';
 import 'package:food_app_depi/features/profile/widgets/profile_menu_tile.dart';
-
+import 'package:food_app_depi/features/cart/screens/cart_screen.dart';
+import 'package:food_app_depi/features/cart/screens/payment_screen.dart';
+import 'package:food_app_depi/features/auth/screens/login_screen.dart';
 Widget
 _svgIcon(
   String name,
@@ -48,7 +50,7 @@ class ProfileScreen
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
-                      color: AppColors.textDark,
+                      color: AppColors.text,
                     ),
                   ),
                   CircleIconButton(
@@ -77,7 +79,7 @@ class ProfileScreen
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
-                          color: AppColors.textDark,
+                          color: AppColors.text,
                         ),
                       ),
                       SizedBox(
@@ -138,6 +140,10 @@ class ProfileScreen
                             'bag',
                           ),
                           label: AppString.cart,
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => const CartScreen()),
+                          ),
                         ),
                         ProfileMenuTile(
                           icon: _svgIcon(
@@ -156,6 +162,10 @@ class ProfileScreen
                             'payment',
                           ),
                           label: AppString.paymentMethod,
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => const PaymentScreen(total: 0)),
+                          ),
                         ),
                       ],
                     ),
@@ -194,6 +204,11 @@ class ProfileScreen
                             'logout',
                           ),
                           label: AppString.logOut,
+                          onTap: () => Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (_) => const LoginScreen()),
+                            (route) => false,
+                          ),
                         ),
                       ],
                     ),

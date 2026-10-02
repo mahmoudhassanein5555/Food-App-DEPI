@@ -21,14 +21,14 @@ class EmptyCardPanel extends StatelessWidget {
           SizedBox(height: 14),
           Text(
             AppString.noMastercardAdded,
-            style: TextStyle(color: AppColors.textPrimary, fontSize: 13),
+            style: TextStyle(color: AppColors.textDarkest, fontSize: 13),
           ),
           SizedBox(height: 4),
           Text(
             AppString.addMastercardDescription,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: AppColors.textSecondary,
+              color: AppColors.muted,
               height: 1.45,
               fontSize: 12,
             ),

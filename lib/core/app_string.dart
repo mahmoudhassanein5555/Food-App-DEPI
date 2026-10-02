@@ -1,3 +1,4 @@
+
 class AppString {
   const AppString._();
 
@@ -95,4 +96,67 @@ class AppString {
   static const loginSubtitle = 'Please sign in to your existing account';
   static const signupSubtitle = 'Please sign up to get started';
   static const forgotSubtitle = 'Please sign in to your existing account';
+
+  // Common
+  static const String orStr = 'Or';
+  static const String search = 'Search';
+
+  // Auth - General
+  static const String emailHint = 'example@gmail.com';
+  static const String password = 'PASSWORD';
+  static const String passwordHint = '123456789';
+  static const String name = 'NAME';
+  static const String nameHint = 'John Doe';
+  static const String retypePassword = 'RE-TYPE PASSWORD';
+
+  // Auth - Validations
+  static const String emailRequired = 'Email is required';
+  static const String emailInvalid = 'Please enter a valid email';
+  static const String passwordRequired = 'Password is required';
+  static const String passwordLengthError = 'Password must be at least 6 characters';
+  static const String passwordUppercaseError = 'Password must contain at least one uppercase letter';
+  static const String invalidEmailOrPassword = 'Invalid email or password';
+  static const String passwordsDoNotMatch = 'Passwords do not match';
+  static const String nameRequired = 'Name is required';
+
+  // Auth - Login
+  static const String logInUpper = 'LOG IN';
+  static const String rememberMe = 'REMEMBER ME';
+  static const String forgotPassword = 'FORGOT PASSWORD';
+  static const String forgotPasswordTitle = 'Forgot Password';
+  static const String sendCode = 'SEND CODE';
+  static const String dontHaveAccount = 'Don\'t have an account?';
+  static const String alreadyHaveAccount = 'Already have an account?';
+
+  // Auth - Sign Up
+  static const String signUp = 'Sign Up';
+  static const String signUpUpper = 'SIGN UP';
+
+  // Auth - Verification
+  static const String verification = 'Verification';
+  static const String verificationSubtitle = 'We have sent a code to your email';
+  static const String verify = 'VERIFY';
+
+  // Home Layout
+  static const String orders = 'Orders';
+
+  // Home Screen
+  static const String deliverTo = 'DELIVER TO';
+  static const String halalLabOffice = 'Halal Lab office';
+  static const String heyHalal = 'Hey Halal,';
+  static const String goodAfternoon = ' Good Afternoon!';
+  static const String searchHint = 'Search dishes, restaurants';
+  static const String allCategories = 'All Categories';
+  static const String openRestaurants = 'Open Restaurants';
+  static const String popularBurgers = 'Popular Burgers';
+
+  // Search Screen
+  static const String recentKeywords = 'Recent Keywords';
+  static const String suggestedRestaurants = 'Suggested Restaurants';
+  static const String popularFastFood = 'Popular Fast Food';
+
+  // Food Details
+  static const String size = 'SIZE:';
+  static const String ingredients = 'INGREDIENTS';
+  static const String addToCart = 'ADD TO CART';
 }

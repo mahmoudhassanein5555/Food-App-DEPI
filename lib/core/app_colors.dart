@@ -11,13 +11,10 @@ class AppColors {
   static const Color placeholder = Color(0xFFA0A5BA);
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF111111);
-  static const Color textDark = Color(0xFF32343E);
   static const Color textDarkest = Color(0xFF181C2E);
   static const Color textGrey = Color(0xFF747783);
-  static const Color placeholderGrey = Color(0xFFA0A5BA);
   static const Color screenBackground = Color(0xFFF6F8FA);
   static const Color card = Color(0xFFF5F5F5);
-  static const Color primaryOrange = Color(0xFFFF7622);
   static const Color primaryOrangeDark = Color(0xFFF36A1B);
   static const Color secondaryOrange = Color(0xFFFB6D3A);
   static const Color peach = Color(0xFFFFC6AE);
@@ -32,10 +29,7 @@ class AppColors {
   static const Color apple = Color(0xFF1B1F2F);
   static const Color offWhite = Color(0xFFF8F9FA);
   static const Color accentOrange = Color(0xFFFFB57D);
-  static const Color darkNavy = Color(0xFF181C2E);
   static const Color navy = Color(0xFF2A3344);
-  static const Color textPrimary = Color(0xFF181C2E);
-  static const Color textSecondary = Color(0xFF646982);
   static const Color lightGray = Color(0xFFE8EAED);
   static const Color softGray = Color(0xFFCBD2D8);
   static const Color mutedGray = Color(0xFF98A2B3);
@@ -50,7 +44,6 @@ class AppColors {
   static const Color cartImagePlaceholder = Color(0xFF292A3C);
   static const Color cartQuantityButton = Color.fromARGB(255, 52, 53, 71);
   static const Color cartHeaderButton = Color(0xFF2A2B3E);
-  static const Color deliveryAddressBackground = Color(0xFFF0F5FA);
   static const Color paymentCardRed = Color(0xFFD81135);
   static const Color paymentCardHighlight = Color(0xFFFFB79B);
   static const Color paymentCardChip = Color(0xFFFFD15C);
@@ -58,5 +51,18 @@ class AppColors {
   static const Color mastercardOrange = Color(0xFFF79E1B);
   static const Color visaBlue = Color(0xFF1769AA);
   static const Color successArtworkBackground = Color(0xFF9AAEBE);
-  static const Color orderImagePlaceholder = Color(0xFF9AAEBE);
+  static const Color primaryLight = Color(0xFFF58D1D);
+  static const Color homeTextprimary = Color(0xFF434755);
+  static const Color textMuted = Color(0xFF9FA5C0);
+  static const Color homeBackground = Color(0xFFF3F3F3);
+  static const Color imagePlaceholder = Color(0xFF98A8B8);
+  static const Color divider = Color(0xFFECECEC);
+  static const Color favorite = Color(0xFFFF8400);
+  static const Color locationPin = Color(0xFFD30A12);
+
+  static const LinearGradient primaryGradient = LinearGradient(
+    colors: [AppColors.orange, AppColors.primaryLight],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
 }

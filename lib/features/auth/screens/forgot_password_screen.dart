@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'auth_shell.dart';
 import 'verification_screen.dart';
-import 'widgets/auth_button.dart';
-import 'widgets/auth_text_field.dart';
+import '../widgets/auth_button.dart';
+import '../widgets/auth_text_field.dart';
+import 'package:food_app_depi/core/app_string.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
@@ -10,8 +11,8 @@ class ForgotPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AuthShell(
-      title: 'Forgot Password',
-      subtitle: 'Please sign in to your existing account',
+      title: AppString.forgotPasswordTitle,
+      subtitle: AppString.loginSubtitle,
       showBack: true,
       onBack: () => Navigator.pop(context),
       child: Positioned.fill(
@@ -20,12 +21,12 @@ class ForgotPasswordScreen extends StatelessWidget {
           child: Column(
             children: [
               const AuthTextField(
-                label: 'EMAIL',
-                hint: 'example@gmail.com',
+                label: AppString.email,
+                hint: AppString.emailHint,
               ),
               const SizedBox(height: 24),
               AuthButton(
-                label: 'SEND CODE',
+                label: AppString.sendCode,
                 onPressed: () {
                   Navigator.push(
                     context,
