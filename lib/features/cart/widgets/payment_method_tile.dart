@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
 import 'package:food_app_depi/features/cart/data/models/payment_method.dart';
 import 'package:food_app_depi/features/cart/widgets/payment_method_mark.dart';
 

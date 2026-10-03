@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/app_colors.dart';
+import '../../../core/utils/app_colors.dart';
 import '../../../core/widgets/app_svg_icon.dart';
-import '../../../core/mock_data.dart';
+import '../../../core/mock_data/mock_data.dart';
 import '../../../core/widgets/circle_icon_button.dart';
 import '../../../core/widgets/restaurant_card.dart';
 import '../../../core/widgets/section_header.dart';
@@ -14,7 +14,7 @@ import '../../orders/screens/orders_screen.dart';
 import '../widgets/home_top_bar.dart';
 import '../widgets/home_search_bar.dart';
 import '../widgets/home_categories.dart';
-import 'package:food_app_depi/core/app_string.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../core/app_colors.dart';
-import '../../../core/mock_data.dart';
+import '../../../core/utils/app_colors.dart';
+import '../../../core/mock_data/mock_data.dart';
 import '../../../core/widgets/restaurant_card.dart';
 import '../../../core/widgets/section_header.dart';
 import '../../restaurant/screens/restaurant_view_screen.dart';
 import '../widgets/food_listing_top_bar.dart';
 import '../widgets/food_listing_grid.dart';
-import 'package:food_app_depi/core/app_string.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
 
 class FoodListingScreen extends StatefulWidget {
   final String categoryName;

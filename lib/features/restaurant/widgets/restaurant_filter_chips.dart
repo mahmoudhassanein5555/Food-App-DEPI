@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/app_colors.dart';
-import 'package:food_app_depi/core/mock_data.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
+import 'package:food_app_depi/core/mock_data/mock_data.dart';
 
 class RestaurantFilterChips extends StatefulWidget {
   const RestaurantFilterChips({super.key});

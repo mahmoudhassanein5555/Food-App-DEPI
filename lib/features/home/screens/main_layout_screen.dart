@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app_depi/core/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
 import 'package:food_app_depi/features/home/screens/home_screen.dart';
 import 'package:food_app_depi/features/cart/screens/cart_screen.dart';
 import 'package:food_app_depi/features/orders/screens/orders_screen.dart';
 import 'package:food_app_depi/features/profile/profile_screen.dart';
-import 'package:food_app_depi/core/app_string.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
 
 class MainLayoutScreen extends StatefulWidget {
   const MainLayoutScreen({super.key});

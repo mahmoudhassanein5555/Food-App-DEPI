@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/app_colors.dart';
-import 'package:food_app_depi/core/app_string.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
 
 class OrderSummaryRow extends StatelessWidget {
   const OrderSummaryRow({super.key, required this.total});

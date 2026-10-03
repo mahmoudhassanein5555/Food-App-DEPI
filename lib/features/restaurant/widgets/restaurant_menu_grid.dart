@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/mock_data.dart';
+import 'package:food_app_depi/core/mock_data/mock_data.dart';
 import 'package:food_app_depi/core/widgets/food_item_card.dart';
 import 'package:food_app_depi/features/cart/data/cart_data_class.dart';
 import 'package:food_app_depi/features/cart/data/models/cart_product.dart';

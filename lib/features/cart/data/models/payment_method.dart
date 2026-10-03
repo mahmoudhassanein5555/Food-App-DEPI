@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/app_string.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
 
 enum PaymentMethod {
   cash(AppString.cash, Icons.payments_outlined),

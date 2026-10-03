@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../app_colors.dart';
-import '../models/app_models.dart';
+import '../utils/app_colors.dart';
+import '../mock_data/models/app_models.dart';
 
 class FoodItemCard extends StatelessWidget {
   final FoodItem item;

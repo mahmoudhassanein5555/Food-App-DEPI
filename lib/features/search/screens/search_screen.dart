@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../core/app_colors.dart';
-import '../../../core/mock_data.dart';
+import '../../../core/utils/app_colors.dart';
+import '../../../core/mock_data/mock_data.dart';
 import 'package:food_app_depi/features/search/widgets/search_top_bar.dart';
 import 'package:food_app_depi/features/search/widgets/search_input_box.dart';
 import 'package:food_app_depi/features/search/widgets/search_recent_keywords.dart';
 import 'package:food_app_depi/features/search/widgets/search_popular_fast_food.dart';
 import 'package:food_app_depi/features/search/widgets/suggested_restaurant_tile.dart';
-import 'package:food_app_depi/core/app_string.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});

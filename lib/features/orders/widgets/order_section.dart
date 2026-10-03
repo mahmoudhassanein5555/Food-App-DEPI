@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
 import 'package:food_app_depi/features/orders/models/order_item.dart';
 import 'package:food_app_depi/features/orders/widgets/order_status_label.dart';
 import 'package:food_app_depi/features/orders/widgets/order_tile.dart';

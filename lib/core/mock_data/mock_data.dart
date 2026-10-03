@@ -13,26 +13,26 @@ const List<String> categoryNames = [
 ];
 
 final List<FoodCategory> mockCategories = [
-  FoodCategory(
+const  FoodCategory(
     name: 'Pizza',
     imageUrl: 'assets/images/pizza_category.jpg',
   ),
-  FoodCategory(
+ const FoodCategory(
     name: 'Burger',
     imageUrl: 'assets/images/burger_category.jpg',
   ),
-  FoodCategory(
+ const FoodCategory(
     name: 'Sandwich',
     imageUrl: 'assets/images/pizza_category.jpg',
   ),
-  FoodCategory(
+const  FoodCategory(
     name: 'Chicken',
     imageUrl: 'assets/images/burger_category.jpg',
   ),
 ];
 
 final List<Restaurant> mockRestaurants = [
-  Restaurant(
+const  Restaurant(
     id: 'r1',
     name: 'Rose Garden Restaurant',
     tagsLine: 'Burger - Chiken - Riche - Wings',
@@ -41,7 +41,7 @@ final List<Restaurant> mockRestaurants = [
     timeMinutes: 20,
     imageUrl: 'assets/images/restaurant_1.jpg',
   ),
-  Restaurant(
+ const Restaurant(
     id: 'r2',
     name: 'Tasty Treat Gallery',
     tagsLine: 'Burger - Fries - Wraps',
@@ -50,7 +50,7 @@ final List<Restaurant> mockRestaurants = [
     timeMinutes: 20,
     imageUrl: 'assets/images/restaurant_2.jpg',
   ),
-  Restaurant(
+ const Restaurant(
     id: 'r3',
     name: 'Spicy Restaurant',
     tagsLine: 'Burger - Sandwich - Pizza',
@@ -62,7 +62,7 @@ final List<Restaurant> mockRestaurants = [
         'Maecenas dolor eget risus varius blandit sit amet non magna. '
         'Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
   ),
-  Restaurant(
+const  Restaurant(
     id: 'r4',
     name: 'Pansi Restaurant',
     tagsLine: 'Fast Food - Burger',
@@ -71,7 +71,7 @@ final List<Restaurant> mockRestaurants = [
     timeMinutes: 15,
     imageUrl: 'assets/images/restaurant_2.jpg',
   ),
-  Restaurant(
+ const Restaurant(
     id: 'r5',
     name: 'American Spicy Burger Shop',
     tagsLine: 'Burger - Spicy',
@@ -80,7 +80,7 @@ final List<Restaurant> mockRestaurants = [
     timeMinutes: 25,
     imageUrl: 'assets/images/restaurant_1.jpg',
   ),
-  Restaurant(
+ const Restaurant(
     id: 'r6',
     name: 'Cafenio Coffee Club',
     tagsLine: 'Coffee - Snacks',
@@ -92,7 +92,7 @@ final List<Restaurant> mockRestaurants = [
 ];
 
 final List<FoodItem> mockBurgers = [
-  FoodItem(
+ const FoodItem(
     id: 'b1',
     name: 'Burger Bistro',
     restaurantName: 'Rose Garden',
@@ -102,21 +102,21 @@ final List<FoodItem> mockBurgers = [
         'Maecenas dolor eget risus varius blandit sit amet non magna. '
         'Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
   ),
-  FoodItem(
+ const FoodItem(
     id: 'b2',
     name: "Smokin' Burger",
     restaurantName: 'Cafenio Restaurant',
     price: 60,
     imageUrl: 'assets/images/burger_item.jpg',
   ),
-  FoodItem(
+const  FoodItem(
     id: 'b3',
     name: 'Buffalo Burgers',
     restaurantName: 'Kafji Firm Kitchen',
     price: 75,
     imageUrl: 'assets/images/burger_item.jpg',
   ),
-  FoodItem(
+ const FoodItem(
     id: 'b4',
     name: 'Bullseye Burgers',
     restaurantName: 'Kobab Restaurant',
@@ -126,14 +126,14 @@ final List<FoodItem> mockBurgers = [
 ];
 
 final List<FoodItem> mockSpicyRestaurantBurgers = [
-  FoodItem(
+ const FoodItem(
     id: 's1',
     name: 'Burger Ferguson',
     restaurantName: 'Spicy Restaurant',
     price: 40,
     imageUrl: 'assets/images/burger_item.jpg',
   ),
-  FoodItem(
+ const FoodItem(
     id: 's2',
     name: "Rockin' Burgers",
     restaurantName: 'Cafecofching',

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app_depi/core/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
 
 class AuthBackground extends StatelessWidget {
   const AuthBackground({

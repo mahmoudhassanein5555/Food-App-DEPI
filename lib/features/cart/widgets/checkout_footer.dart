@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
 import 'package:food_app_depi/features/cart/widgets/orange_action_button.dart';
 import 'package:food_app_depi/features/cart/widgets/order_summary_row.dart';
 

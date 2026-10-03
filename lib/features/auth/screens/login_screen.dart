@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_depi/features/auth/data/auth_data.dart';
-import '../../../core/app_colors.dart';
+import '../../../core/utils/app_colors.dart';
 import 'auth_shell.dart';
 import 'forgot_password_screen.dart';
 import 'signup_screen.dart';
@@ -8,7 +8,7 @@ import '../widgets/auth_button.dart';
 import '../widgets/auth_text_field.dart';
 import '../widgets/social_buttons.dart';
 import '../../home/screens/main_layout_screen.dart';
-import 'package:food_app_depi/core/app_string.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

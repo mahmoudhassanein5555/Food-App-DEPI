@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
 import 'package:food_app_depi/core/widgets/app_svg_icon.dart';
 
 class CircleIconButton extends StatelessWidget {

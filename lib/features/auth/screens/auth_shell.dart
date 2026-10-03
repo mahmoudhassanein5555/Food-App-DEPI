@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../widgets/auth_background.dart';
-import 'package:food_app_depi/core/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
 
 class AuthShell extends StatelessWidget {
   const AuthShell({
@@ -24,15 +23,13 @@ class AuthShell extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: AspectRatio(
-          aspectRatio: 375 / 812,
+          aspectRatio: 360 / 800,
           child: Stack(
             children: [
-              
               const AuthBackground(
                 showBack: false,
                 onBack: null,
               ),
-
               if (showBack)
                 Positioned(
                   left: 24,
@@ -56,7 +53,6 @@ class AuthShell extends StatelessWidget {
                     ),
                   ),
                 ),
-
               Positioned(
                 left: 0,
                 right: 0,
@@ -99,7 +95,7 @@ class AuthShell extends StatelessWidget {
                     ),
                   ],
                 ),
-              ), 
+              ),
               Positioned.fill(
                 child: child,
               ),

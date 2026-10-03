@@ -1,4 +1,4 @@
-import 'package:food_app_depi/core/mock_data.dart';
+import 'package:food_app_depi/core/mock_data/mock_data.dart';
 import 'package:food_app_depi/features/cart/data/models/cart_product.dart';
 
 class CartDataClass {

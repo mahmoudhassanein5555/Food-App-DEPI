@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/app_colors.dart';
-import 'package:food_app_depi/core/models/app_models.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
+import 'package:food_app_depi/core/mock_data/models/app_models.dart';
 import 'package:food_app_depi/core/widgets/app_svg_icon.dart';
 import 'package:food_app_depi/features/cart/data/cart_data_class.dart';
 import 'package:food_app_depi/features/cart/data/models/cart_product.dart';
-import 'package:food_app_depi/core/app_string.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
 
 class FoodBottomBar extends StatefulWidget {
   final FoodItem item;

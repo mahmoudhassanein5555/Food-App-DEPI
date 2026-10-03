@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/models/address_model.dart';
+import 'package:food_app_depi/core/mock_data/models/address_model.dart';
 import 'package:food_app_depi/features/profile/add_edit_address_screen.dart';
 import 'package:food_app_depi/features/profile/address_list_screen.dart';
 import 'package:food_app_depi/features/profile/edit_profile_screen.dart';

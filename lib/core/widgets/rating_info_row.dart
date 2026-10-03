@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../app_colors.dart';
+import '../utils/app_colors.dart';
 import 'app_svg_icon.dart';
 class RatingInfoRow extends StatelessWidget {
   final double rating;

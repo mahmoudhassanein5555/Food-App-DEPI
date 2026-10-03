@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/app_colors.dart';
-import 'package:food_app_depi/core/app_string.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
 import 'package:food_app_depi/features/cart/data/cart_data_class.dart';
 import 'package:food_app_depi/features/cart/data/models/cart_product.dart';
 import 'package:food_app_depi/features/cart/screens/payment_screen.dart';
 import 'package:food_app_depi/features/cart/widgets/cart_details_panel.dart';
 import 'package:food_app_depi/features/cart/widgets/cart_header.dart';
 import 'package:food_app_depi/features/cart/widgets/cart_item_tile.dart';
-import 'package:food_app_depi/core/mock_data.dart';
+import 'package:food_app_depi/core/mock_data/mock_data.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});

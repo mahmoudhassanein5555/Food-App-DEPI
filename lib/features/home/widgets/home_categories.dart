@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/core/app_colors.dart';
-import 'package:food_app_depi/core/mock_data.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
+import 'package:food_app_depi/core/mock_data/mock_data.dart';
 import 'package:food_app_depi/features/food_listing/screens/food_listing_screen.dart';
 
 class HomeCategories extends StatelessWidget {

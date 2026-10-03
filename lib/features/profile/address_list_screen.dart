@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app_depi/core/app_colors.dart';
-import 'package:food_app_depi/core/app_routes.dart';
-import 'package:food_app_depi/core/app_string.dart';
-import 'package:food_app_depi/core/models/address_model.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_routes.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
+import 'package:food_app_depi/core/mock_data/models/address_model.dart';
 import 'package:food_app_depi/core/widgets/circle_icon_button.dart';
 
 class AddressListScreen extends StatefulWidget {

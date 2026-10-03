@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'auth_shell.dart';
 import '../widgets/auth_button.dart';
 import 'login_screen.dart';
-import 'package:food_app_depi/core/app_string.dart';
-import 'package:food_app_depi/core/app_colors.dart';
+import 'package:food_app_depi/core/utils/app_string.dart';
+import 'package:food_app_depi/core/utils/app_colors.dart';
 
 class VerificationScreen extends StatefulWidget {
   const VerificationScreen({super.key});
