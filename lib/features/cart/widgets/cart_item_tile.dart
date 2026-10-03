@@ -24,7 +24,7 @@ class CartItemTile extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
-            child: Container(
+            child: SizedBox(
               width: 90,
               height: 90,
               child: Image.asset(product.imageUrl, fit: BoxFit.cover),

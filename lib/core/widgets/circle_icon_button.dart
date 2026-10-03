@@ -26,13 +26,14 @@ class CircleIconButton extends StatelessWidget {
     BuildContext context, {
     Color? background,
     Color? iconColor,
+    VoidCallback? onTap,
   }) {
     return CircleIconButton(
       icon: Icons.chevron_left,
       background: background,
       backgroundColor: background ?? AppColors.card,
       iconColor: iconColor ?? AppColors.text,
-      onTap: () => Navigator.of(context).maybePop(),
+      onTap: onTap ?? () => Navigator.of(context).maybePop(),
     );
   }
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_app_depi/core/utils/app_colors.dart';
 import 'package:food_app_depi/core/utils/app_routes.dart';
-import 'package:food_app_depi/features/home/screens/main_layout_screen.dart';
 import 'package:food_app_depi/features/splash/splash_screen.dart';
 
 void main() {
@@ -24,7 +23,7 @@ class FoodDeliveryApp extends StatelessWidget {
           seedColor: AppColors.orange,
         ),
       ),
-      home: SplashScreen(),
+      home: const SplashScreen(),
       routes: AppRoutes.table,
       onGenerateRoute: AppRoutes.onGenerateRoute,
     );

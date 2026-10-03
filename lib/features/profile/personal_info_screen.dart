@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app_depi/core/utils/app_colors.dart';
 import 'package:food_app_depi/core/utils/app_routes.dart';
 import 'package:food_app_depi/core/utils/app_string.dart';
 import 'package:food_app_depi/core/widgets/circle_icon_button.dart';
+import 'profile_data.dart';
 
 class PersonalInfoScreen
     extends
@@ -22,10 +25,11 @@ class _PersonalInfoScreenState
         State<
           PersonalInfoScreen
         > {
-  String fullName = 'Vishal Khadok';
-  String email = 'hello@halallab.co';
-  String phoneNumber = '408-841-0926';
-  String bio = 'I love fast food';
+  String fullName = ProfileData.fullName;
+  String email = ProfileData.email;
+  String phoneNumber = ProfileData.phoneNumber;
+  String bio = ProfileData.bio;
+  String? imagePath = ProfileData.imagePath;
 
   Future<
     void
@@ -41,6 +45,7 @@ class _PersonalInfoScreenState
             'email': email,
             'phoneNumber': phoneNumber,
             'bio': bio,
+            'imagePath': imagePath,
           },
         );
 
@@ -58,6 +63,12 @@ class _PersonalInfoScreenState
         bio =
             result['bio'] ??
             bio;
+        imagePath = result['imagePath'] ?? imagePath;
+        ProfileData.fullName = fullName;
+        ProfileData.email = email;
+        ProfileData.phoneNumber = phoneNumber;
+        ProfileData.bio = bio;
+        ProfileData.imagePath = imagePath;
       });
     }
   }
@@ -111,9 +122,12 @@ class _PersonalInfoScreenState
               ),
               Row(
                 children: [
-                  const CircleAvatar(
+                  CircleAvatar(
                     radius: 34,
                     backgroundColor: AppColors.peach,
+                    backgroundImage: imagePath == null
+                        ? null
+                        : FileImage(File(imagePath!)),
                   ),
                   const SizedBox(
                     width: 16,

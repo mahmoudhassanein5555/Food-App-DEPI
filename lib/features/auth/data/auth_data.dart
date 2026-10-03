@@ -7,6 +7,11 @@ class AuthData {
         email: 'mahmoud@gmail.com',
         name: 'Mahmoud Hassanein',
         password: 'Password123'),
+    UserModel(
+        id: '2',
+        email: 'ahmed@gmail.com',
+        name: 'Ahmed Hassan',
+        password: 'Password911'),
   ];
 
   static addUser(UserModel user) {

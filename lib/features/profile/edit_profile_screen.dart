@@ -1,62 +1,44 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:food_app_depi/core/utils/app_colors.dart';
 import 'package:food_app_depi/core/utils/app_string.dart';
 import 'package:food_app_depi/core/widgets/circle_icon_button.dart';
 
-class EditProfileScreen
-    extends
-        StatefulWidget {
-  final Map<
-    String,
-    dynamic
-  >?
-  initialData;
+class EditProfileScreen extends StatefulWidget {
+  final Map<String, dynamic>? initialData;
 
   const EditProfileScreen({super.key, this.initialData});
 
   @override
-  State<
-    EditProfileScreen
-  >
-  createState() => _EditProfileScreenState();
+  State<EditProfileScreen> createState() => _EditProfileScreenState();
 }
 
-class _EditProfileScreenState
-    extends
-        State<
-          EditProfileScreen
-        > {
+class _EditProfileScreenState extends State<EditProfileScreen> {
   late final TextEditingController _nameController;
   late final TextEditingController _emailController;
   late final TextEditingController _phoneController;
   late final TextEditingController _bioController;
+  final ImagePicker _imagePicker = ImagePicker();
+  String? _imagePath;
 
   @override
   void initState() {
     super.initState();
-    final data =
-        widget.initialData ??
-        {};
+    final data = widget.initialData ?? {};
+    _imagePath = data['imagePath'];
     _nameController = TextEditingController(
-      text:
-          data['fullName'] ??
-          '',
+      text: data['fullName'] ?? '',
     );
     _emailController = TextEditingController(
-      text:
-          data['email'] ??
-          '',
+      text: data['email'] ?? '',
     );
     _phoneController = TextEditingController(
-      text:
-          data['phoneNumber'] ??
-          '',
+      text: data['phoneNumber'] ?? '',
     );
     _bioController = TextEditingController(
-      text:
-          data['bio'] ??
-          '',
+      text: data['bio'] ?? '',
     );
   }
 
@@ -77,7 +59,41 @@ class _EditProfileScreenState
       'email': _emailController.text,
       'phoneNumber': _phoneController.text,
       'bio': _bioController.text,
+      'imagePath': _imagePath,
     });
+  }
+
+  Future<void> _changeProfilePicture() async {
+    final source = await showModalBottomSheet<ImageSource>(
+      context: context,
+      builder: (context) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              leading: const Icon(Icons.photo_library_outlined),
+              title: const Text('Choose from gallery'),
+              onTap: () => Navigator.pop(context, ImageSource.gallery),
+            ),
+            ListTile(
+              leading: const Icon(Icons.camera_alt_outlined),
+              title: const Text('Take a photo'),
+              onTap: () => Navigator.pop(context, ImageSource.camera),
+            ),
+          ],
+        ),
+      ),
+    );
+
+    if (source == null) return;
+
+    final image = await _imagePicker.pickImage(
+      source: source,
+      imageQuality: 85,
+    );
+    if (image != null && mounted) {
+      setState(() => _imagePath = image.path);
+    }
   }
 
   @override
@@ -124,31 +140,29 @@ class _EditProfileScreenState
                     Center(
                       child: Stack(
                         children: [
-                          const CircleAvatar(
+                          CircleAvatar(
                             radius: 48,
                             backgroundColor: AppColors.peach,
+                            backgroundImage: _imagePath == null
+                                ? null
+                                : FileImage(File(_imagePath!)),
                           ),
                           Positioned(
-                            right: 0,
-                            bottom: 0,
-                            child: Container(
-                              width: 30,
-                              height: 30,
-                              decoration: const BoxDecoration(
-                                color: AppColors.orange,
-                                shape: BoxShape.circle,
-                              ),
-                              alignment: Alignment.center,
-                              child: SvgPicture.asset(
-                                'assets/icons/pin.svg',
-                                width: 14,
-                                height: 14,
-                                
-                                colorFilter: const ColorFilter.mode(
-                                  AppColors.white,
-                                  BlendMode.srcIn,
+                            right: -9,
+                            bottom: -9,
+                            child: IconButton(
+                              tooltip: 'Change profile picture',
+                              onPressed: _changeProfilePicture,
+                              icon: const CircleAvatar(
+                                radius: 15,
+                                backgroundColor: AppColors.orange,
+                                child: Icon(
+                                  Icons.camera_alt_outlined,
+                                  size: 15,
+                                  color: AppColors.white,
                                 ),
                               ),
+                              padding: EdgeInsets.zero,
                             ),
                           ),
                         ],
@@ -240,9 +254,7 @@ class _EditProfileScreenState
   }
 }
 
-class _FieldLabel
-    extends
-        StatelessWidget {
+class _FieldLabel extends StatelessWidget {
   final String text;
   const _FieldLabel(this.text);
 
@@ -267,14 +279,13 @@ class _FieldLabel
   }
 }
 
-class _FormField
-    extends
-        StatelessWidget {
+class _FormField extends StatelessWidget {
   final TextEditingController controller;
   final TextInputType? keyboardType;
   final int maxLines;
 
-  const _FormField({required this.controller, this.keyboardType, this.maxLines = 1});
+  const _FormField(
+      {required this.controller, this.keyboardType, this.maxLines = 1});
 
   @override
   Widget build(

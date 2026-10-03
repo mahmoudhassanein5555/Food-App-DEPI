@@ -8,7 +8,9 @@ import 'package:food_app_depi/features/orders/widgets/orders_header.dart';
 import 'package:food_app_depi/features/orders/widgets/orders_tab_bar.dart';
 
 class OrdersScreen extends StatelessWidget {
-  const OrdersScreen({super.key});
+  const OrdersScreen({super.key, this.onBackToHome});
+
+  final VoidCallback? onBackToHome;
 
   static const List<OrderItem> _ongoingOrders = [
     OrderItem(
@@ -80,11 +82,14 @@ class OrdersScreen extends StatelessWidget {
           child: Center(
             child: ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 440),
-              child: const Column(
+              child: Column(
                 children: [
-                  OrdersHeader(),
-                  OrdersTabBar(),
-                  Expanded(
+                  OrdersHeader(
+                    onBack:
+                        onBackToHome ?? () => Navigator.of(context).maybePop(),
+                  ),
+                  const OrdersTabBar(),
+                  const Expanded(
                     child: TabBarView(
                       children: [
                         OngoingOrdersScreen(orders: _ongoingOrders),

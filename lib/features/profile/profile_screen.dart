@@ -8,19 +8,32 @@ import 'package:food_app_depi/features/profile/widgets/profile_menu_tile.dart';
 import 'package:food_app_depi/features/cart/screens/cart_screen.dart';
 import 'package:food_app_depi/features/cart/screens/payment_screen.dart';
 import 'package:food_app_depi/features/auth/screens/login_screen.dart';
-Widget
-_svgIcon(
-  String name,
-) => SvgPicture.asset(
-  'assets/icons/$name.svg',
-  width: 20,
-  height: 20,
-);
+import 'profile_data.dart';
+import 'dart:io';
 
-class ProfileScreen
-    extends
-        StatelessWidget {
-  const ProfileScreen({super.key});
+Widget _svgIcon(
+  String name,
+) =>
+    SvgPicture.asset(
+      'assets/icons/$name.svg',
+      width: 20,
+      height: 20,
+    );
+
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key, this.onBackToHome});
+
+  final VoidCallback? onBackToHome;
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  Future<void> _openPersonalInfo() async {
+    await Navigator.of(context).pushNamed(AppRoutes.personalInfo);
+    if (mounted) setState(() {});
+  }
 
   @override
   Widget build(
@@ -44,6 +57,7 @@ class ProfileScreen
                 children: [
                   CircleIconButton.back(
                     context,
+                    onTap: widget.onBackToHome,
                   ),
                   const Text(
                     AppString.profile,
@@ -62,32 +76,35 @@ class ProfileScreen
               const SizedBox(
                 height: 24,
               ),
-              const Row(
+              Row(
                 children: [
                   CircleAvatar(
                     radius: 34,
                     backgroundColor: AppColors.peach,
+                    backgroundImage: ProfileData.imagePath == null
+                        ? null
+                        : FileImage(File(ProfileData.imagePath!)),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 16,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Vishal Khadok',
-                        style: TextStyle(
+                        ProfileData.fullName,
+                        style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w700,
                           color: AppColors.text,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 4,
                       ),
                       Text(
-                        'I love fast food',
-                        style: TextStyle(
+                        ProfileData.bio,
+                        style: const TextStyle(
                           fontSize: 13,
                           color: AppColors.textGrey,
                         ),
@@ -109,24 +126,18 @@ class ProfileScreen
                             'person',
                           ),
                           label: AppString.personalInfo,
-                          onTap: () =>
-                              Navigator.of(
-                                context,
-                              ).pushNamed(
-                                AppRoutes.personalInfo,
-                              ),
+                          onTap: _openPersonalInfo,
                         ),
                         ProfileMenuTile(
                           icon: _svgIcon(
                             'map',
                           ),
                           label: AppString.addresses,
-                          onTap: () =>
-                              Navigator.of(
-                                context,
-                              ).pushNamed(
-                                AppRoutes.addressList,
-                              ),
+                          onTap: () => Navigator.of(
+                            context,
+                          ).pushNamed(
+                            AppRoutes.addressList,
+                          ),
                         ),
                       ],
                     ),
@@ -142,7 +153,8 @@ class ProfileScreen
                           label: AppString.cart,
                           onTap: () => Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (_) => const CartScreen()),
+                            MaterialPageRoute(
+                                builder: (_) => const CartScreen()),
                           ),
                         ),
                         ProfileMenuTile(
@@ -164,7 +176,8 @@ class ProfileScreen
                           label: AppString.paymentMethod,
                           onTap: () => Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (_) => const PaymentScreen(total: 0)),
+                            MaterialPageRoute(
+                                builder: (_) => const PaymentScreen(total: 0)),
                           ),
                         ),
                       ],
@@ -206,7 +219,8 @@ class ProfileScreen
                           label: AppString.logOut,
                           onTap: () => Navigator.pushAndRemoveUntil(
                             context,
-                            MaterialPageRoute(builder: (_) => const LoginScreen()),
+                            MaterialPageRoute(
+                                builder: (_) => const LoginScreen()),
                             (route) => false,
                           ),
                         ),

@@ -4,13 +4,15 @@ import 'package:food_app_depi/core/utils/app_string.dart';
 import 'package:food_app_depi/features/cart/widgets/screen_header.dart';
 
 class CartHeader extends StatelessWidget {
-  const CartHeader({super.key});
+  const CartHeader({super.key, this.onBack});
+
+  final VoidCallback? onBack;
 
   @override
   Widget build(BuildContext context) {
     return ScreenHeader(
       title: AppString.cartTitle,
-      onBack: null,
+      onBack: onBack ?? () => Navigator.of(context).maybePop(),
       dark: true,
       trailing: TextButton(
         onPressed: () {},

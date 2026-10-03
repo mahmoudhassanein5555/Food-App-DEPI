@@ -3,7 +3,9 @@ import 'package:food_app_depi/core/utils/app_colors.dart';
 import 'package:food_app_depi/core/utils/app_string.dart';
 
 class OrdersHeader extends StatelessWidget {
-  const OrdersHeader({super.key});
+  const OrdersHeader({super.key, this.onBack});
+
+  final VoidCallback? onBack;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class OrdersHeader extends StatelessWidget {
         child: Row(
           children: [
             IconButton.filled(
-              onPressed: () => Navigator.of(context).maybePop(),
+              onPressed: onBack ?? () => Navigator.of(context).maybePop(),
               style: IconButton.styleFrom(
                 backgroundColor: AppColors.card,
                 foregroundColor: AppColors.textDarkest,

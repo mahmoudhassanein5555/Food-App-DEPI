@@ -19,7 +19,7 @@ const  FoodCategory(
   ),
  const FoodCategory(
     name: 'Burger',
-    imageUrl: 'assets/images/burger_category.jpg',
+    imageUrl: 'assets/images/burger_item.jpg',
   ),
  const FoodCategory(
     name: 'Sandwich',

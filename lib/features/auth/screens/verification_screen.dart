@@ -7,7 +7,9 @@ import 'package:food_app_depi/core/utils/app_string.dart';
 import 'package:food_app_depi/core/utils/app_colors.dart';
 
 class VerificationScreen extends StatefulWidget {
-  const VerificationScreen({super.key});
+  const VerificationScreen({super.key, required this.email});
+
+  final String email;
 
   @override
   State<VerificationScreen> createState() => _VerificationScreenState();
@@ -56,9 +58,9 @@ class _VerificationScreenState extends State<VerificationScreen> {
           padding: const EdgeInsets.fromLTRB(24, 184, 24, 0),
           child: Column(
             children: [
-              const Text(
-                AppString.emailHint,
-                style: TextStyle(
+              Text(
+                widget.email,
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
@@ -79,7 +81,8 @@ class _VerificationScreenState extends State<VerificationScreen> {
                       maxLength: 1,
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.number,
-                      textInputAction: i == 3 ? TextInputAction.done : TextInputAction.next,
+                      textInputAction:
+                          i == 3 ? TextInputAction.done : TextInputAction.next,
                       style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w700,

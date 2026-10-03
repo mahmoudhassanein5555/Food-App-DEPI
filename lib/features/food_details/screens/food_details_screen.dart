@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_app_depi/features/cart/data/cart_data_class.dart';
-import 'package:food_app_depi/features/cart/data/models/cart_product.dart';
 import '../../../core/utils/app_colors.dart';
 import '../../../core/widgets/app_svg_icon.dart';
 import '../../../core/mock_data/models/app_models.dart';
-import '../../../core/widgets/circle_icon_button.dart';
 import '../../../core/widgets/rating_info_row.dart';
 import '../widgets/food_hero_image.dart';
 import '../widgets/food_size_selector.dart';
@@ -22,7 +19,7 @@ class FoodDetailsScreen extends StatefulWidget {
 }
 
 class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
-  double get _unitPrice => widget.item.price;
+  double get unitPrice => widget.item.price;
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/utils/app_colors.dart';
 
-class AuthTextField extends StatelessWidget {
+class AuthTextField extends StatefulWidget {
   const AuthTextField({
     super.key,
     required this.label,
@@ -23,12 +23,25 @@ class AuthTextField extends StatelessWidget {
   final String? Function(String?)? validator;
 
   @override
+  State<AuthTextField> createState() => _AuthTextFieldState();
+}
+
+class _AuthTextFieldState extends State<AuthTextField> {
+  late bool _obscureText;
+
+  @override
+  void initState() {
+    super.initState();
+    _obscureText = widget.obscure;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          label,
+          widget.label,
           style: const TextStyle(
             fontSize: 13,
             height: 16 / 13,
@@ -37,17 +50,17 @@ class AuthTextField extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         TextFormField(
-          controller: controller,
-          obscureText: obscure,
-          keyboardType: keyboardType,
-          autofocus: autofocus,
-          validator: validator,
+          controller: widget.controller,
+          obscureText: _obscureText,
+          keyboardType: widget.keyboardType,
+          autofocus: widget.autofocus,
+          validator: widget.validator,
           style: const TextStyle(
             fontSize: 14,
             color: AppColors.text,
           ),
           decoration: InputDecoration(
-            hintText: hint,
+            hintText: widget.hint,
             hintStyle: const TextStyle(
               fontSize: 14,
               color: AppColors.placeholder,
@@ -61,11 +74,18 @@ class AuthTextField extends StatelessWidget {
             contentPadding: const EdgeInsets.symmetric(
               horizontal: 20,
             ),
-            suffixIcon: obscure
-                ? const Icon(
-                    Icons.visibility_off_outlined,
-                    size: 16,
-                    color: AppColors.placeholder,
+            suffixIcon: widget.obscure
+                ? IconButton(
+                    onPressed: () {
+                      setState(() => _obscureText = !_obscureText);
+                    },
+                    icon: Icon(
+                      _obscureText
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
+                      size: 16,
+                      color: AppColors.placeholder,
+                    ),
                   )
                 : null,
           ),

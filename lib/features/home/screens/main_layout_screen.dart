@@ -17,26 +17,28 @@ class MainLayoutScreen extends StatefulWidget {
 class _MainLayoutScreenState extends State<MainLayoutScreen> {
   int _currentIndex = 0;
 
-  final List<Widget> _screens = [
-    const HomeScreen(),
-    const CartScreen(),
-    const OrdersScreen(),
-    const ProfileScreen(),
-  ];
+  void _showHome() {
+    setState(() => _currentIndex = 0);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
         index: _currentIndex,
-        children: _screens,
+        children: [
+          const HomeScreen(),
+          CartScreen(onBackToHome: _showHome),
+          OrdersScreen(onBackToHome: _showHome),
+          ProfileScreen(onBackToHome: _showHome),
+        ],
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: AppColors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, -5),
             ),
@@ -65,7 +67,8 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
               label: AppString.cart,
             ),
             BottomNavigationBarItem(
-              icon: _buildIcon('assets/icons/bag.svg', 2), // Assuming bag is for orders
+              icon: _buildIcon(
+                  'assets/icons/bag.svg', 2), // Assuming bag is for orders
               label: AppString.orders,
             ),
             BottomNavigationBarItem(

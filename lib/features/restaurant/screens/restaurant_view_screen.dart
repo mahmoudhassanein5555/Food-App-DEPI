@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:food_app_depi/features/cart/data/cart_data_class.dart';
-import 'package:food_app_depi/features/cart/data/models/cart_product.dart';
 import '../../../core/utils/app_colors.dart';
 import '../../../core/mock_data/mock_data.dart';
 import '../../../core/mock_data/models/app_models.dart';
-import '../../../core/widgets/circle_icon_button.dart';
-import '../../../core/widgets/food_item_card.dart';
 import '../../../core/widgets/rating_info_row.dart';
-import '../../food_details/screens/food_details_screen.dart';
 import '../widgets/restaurant_image_carousel.dart';
 import '../widgets/restaurant_filter_chips.dart';
 import '../widgets/restaurant_menu_grid.dart';

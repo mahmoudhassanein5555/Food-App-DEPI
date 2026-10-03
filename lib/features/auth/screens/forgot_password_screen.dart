@@ -5,8 +5,22 @@ import '../widgets/auth_button.dart';
 import '../widgets/auth_text_field.dart';
 import 'package:food_app_depi/core/utils/app_string.dart';
 
-class ForgotPasswordScreen extends StatelessWidget {
+class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({super.key});
+
+  @override
+  State<ForgotPasswordScreen> createState() => _ForgotPasswordScreenState();
+}
+
+class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,23 +32,45 @@ class ForgotPasswordScreen extends StatelessWidget {
       child: Positioned.fill(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(24, 257, 24, 0),
-          child: Column(
-            children: [
-              const AuthTextField(
-                label: AppString.email,
-                hint: AppString.emailHint,
-              ),
-              const SizedBox(height: 24),
-              AuthButton(
-                label: AppString.sendCode,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => const VerificationScreen()),
-                  );
-                },
-              ),
-            ],
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                AuthTextField(
+                  label: AppString.email,
+                  hint: AppString.emailHint,
+                  controller: _emailController,
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
+                    final email = value?.trim() ?? '';
+                    if (email.isEmpty) {
+                      return AppString.emailRequired;
+                    }
+                    if (!email.contains('@') || !email.contains('.')) {
+                      return AppString.emailInvalid;
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 24),
+                AuthButton(
+                  label: AppString.sendCode,
+                  onPressed: () {
+                    if (!(_formKey.currentState?.validate() ?? false)) {
+                      return;
+                    }
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => VerificationScreen(
+                          email: _emailController.text.trim(),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
