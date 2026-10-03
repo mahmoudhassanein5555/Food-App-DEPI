@@ -24,7 +24,7 @@ class FoodDeliveryApp extends StatelessWidget {
           seedColor: AppColors.orange,
         ),
       ),
-      home: MainLayoutScreen(),
+      home: SplashScreen(),
       routes: AppRoutes.table,
       onGenerateRoute: AppRoutes.onGenerateRoute,
     );
